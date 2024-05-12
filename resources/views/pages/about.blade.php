@@ -53,12 +53,12 @@
           <span class="caption">Companies</span>
         </div>
 
-          
+
       </div>
     </div>
   </section>
 
-  
+
   <section class="site-section pb-0">
     <div class="container">
       <div class="row align-items-center">
@@ -95,7 +95,7 @@
     </div>
   </section>
 
- 
+
   <section class="site-section">
     <div class="container">
       <div class="row mb-5">
@@ -139,4 +139,4 @@
         </div>
     </div>
   </section>
-@endsection  
+@endsection

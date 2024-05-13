@@ -558,7 +558,7 @@
                   <option>Full Time</option>
                 </select>
               </div>
-              <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
+              <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0"style="color: #084b39">
                 <button name="submit" type="submit" class="btn btn-success btn-lg btn-block text-white btn-search" ><span class="icon-search icon mr-2"></span>Search Job</button>
               </div>
             </div>
@@ -676,7 +676,7 @@
     </div>
   </section>
 
-  <!--<section class="py-5 bg-image overlay-primary fixed overlay" style="background-image: url('images/hero_1.jpg');">
+  <section class="py-5 bg-image overlay-primary fixed overlay" style="background-image: url('images/hero_1.jpg');">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-md-8">
@@ -688,7 +688,7 @@
         </div>
       </div>
     </div>
-  </section>-->
+  </section>
 
 
   <!--<section class="site-section py-4">

@@ -19,7 +19,7 @@ class AdminsTableSeeder extends Seeder
         Admin::create([
             'name' => 'Admin User',
             'email' => 'admin@example.com',
-            'password' => Hash::make('cubezoo123'),
+            'password' => Hash::make('password123'),
             // You can adjust other fields as needed
         ]);
 

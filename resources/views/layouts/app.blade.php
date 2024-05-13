@@ -43,7 +43,7 @@
     <header class="site-navbar mt-3">
         <div class="container-fluid">
           <div class="row align-items-center">
-            <div class="site-logo col-6"><a class="text-decoration-none" href="{{ url('/') }}">SOLE PROVIDERS</a></div>
+            <div class="site-logo col-6"><a class="text-decoration-none" href="{{ url('/') }}"><img src="{{ asset('assets/images/WOGB_Logo_white.png') }}" alt="Image" style="width: 20%;"></a></div>
 
             <nav class="mx-auto site-navigation">
               <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">

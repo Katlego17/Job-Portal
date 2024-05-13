@@ -12,7 +12,7 @@
             </div>
           @endif
 
-          <h5 class="card-title mb-4 d-inline">Job Applications</h5>
+          <h5 class="card-title mb-4 d-inline" style="padding:10px">Job Applications</h5>
 
           <table class="table">
             <thead>
@@ -38,12 +38,14 @@
                      <td><a href="{{ route('delete.apps', $app->id) }}" class="btn btn-danger  text-center ">delete</a></td>
                   </tr>
                 @endforeach
-             
-              
+
+
             </tbody>
-          </table> 
+          </table>
         </div>
       </div>
     </div>
   </div>
-@endsection  
+@endsection
+
+

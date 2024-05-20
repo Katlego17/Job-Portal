@@ -27,7 +27,7 @@
                                     @csrf
                                     <div class="form-group">
                                         <label class="font-weight-semibold" for="userName">Username:</label>
-                                        <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                        <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Username">
                                         @error('name')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -36,7 +36,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label class="font-weight-semibold" for="email">Email:</label>
-                                        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                                        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Email">
 
                                         @error('email')
                                             <span class="invalid-feedback" role="alert">
@@ -55,7 +55,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label class="font-weight-semibold" for="confirmPassword">Confirm Password:</label>
-                                        <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                                        <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" placeholder="Password Confirmation">
                                     </div>
                                     <div class="form-group">
                                         <div class="d-flex align-items-center justify-content-between p-t-15">

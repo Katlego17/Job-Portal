@@ -2,45 +2,65 @@
 
 @section('content')
 <div class="row">
-    <div class="col-md-3">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Jobs</h5>
-          <!-- <h6 class="card-subtitle mb-2 text-muted">Bootstrap 4.0.0 Snippet by pradeep330</h6> -->
-          <p class="card-text">number of jobs: {{ $jobs }}</p>
-         
+    <div class="col-md-6 col-lg-3">
+        <div class="card">
+            <div class="card-body">
+                <div class="media align-items-center">
+                    <div class="avatar avatar-icon avatar-lg avatar-blue">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <div class="m-l-15">
+                        <h2 class="m-b-0">{{ $jobs }}</h2>
+                        <p class="m-b-0 text-muted">Jobs</p>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-    <div class="col-md-3">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Categories</h5>
-          
-          <p class="card-text">number of categories: {{  $categories }}</p>
-          
+    <div class="col-md-6 col-lg-3">
+        <div class="card">
+            <div class="card-body">
+                <div class="media align-items-center">
+                    <div class="avatar avatar-icon avatar-lg avatar-cyan">
+                        <i class="anticon anticon-bars"></i>
+                    </div>
+                    <div class="m-l-15">
+                        <h2 class="m-b-0">{{ $categories }}</h2>
+                        <p class="m-b-0 text-muted">Categories</p>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-    <div class="col-md-3">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Admins</h5>
-          
-          <p class="card-text">number of admins: {{  $admins }}</p>
-          
+    <div class="col-md-6 col-lg-3">
+        <div class="card">
+            <div class="card-body">
+                <div class="media align-items-center">
+                    <div class="avatar avatar-icon avatar-lg avatar-gold">
+                        <i class="anticon anticon-user"></i>
+                    </div>
+                    <div class="m-l-15">
+                        <h2 class="m-b-0">{{ $admins }}</h2>
+                        <p class="m-b-0 text-muted">Admins</p>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-    <div class="col-md-3">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Applications</h5>
-          
-          <p class="card-text">number of applications:  {{  $applications }}</p>
-          
+    <div class="col-md-6 col-lg-3">
+        <div class="card">
+            <div class="card-body">
+                <div class="media align-items-center">
+                    <div class="avatar avatar-icon avatar-lg avatar-purple">
+                        <i class="anticon anticon-solution"></i>
+                    </div>
+                    <div class="m-l-15">
+                        <h2 class="m-b-0">{{ $applications }}</h2>
+                        <p class="m-b-0 text-muted">Applications</p>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
-@endsection  
+</div>
+@endsection

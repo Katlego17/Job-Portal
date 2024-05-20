@@ -7,22 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
-
-
-    <!-- our css and js files -->
-    <link rel="stylesheet" href="{{ asset('assets/css/custom-bs.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/jquery.fancybox.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap-select.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/fonts/icomoon/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/fonts/line-icons/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/animate.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/quill.snow.css') }}">
+    <title>{{ config('app.name', 'Working On Green Buildings') }}</title>
 
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">

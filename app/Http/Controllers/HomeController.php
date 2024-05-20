@@ -25,7 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-       
+
         $duplicates = DB::table('searches')
         ->select('keyword', DB::raw('COUNT(*) as `count`'))
         ->groupBy('keyword')
@@ -33,7 +33,7 @@ class HomeController extends Controller
         ->take(3)
         ->orderBy('count', 'asc')
         ->get();
-    
+
 
 
 
@@ -43,6 +43,23 @@ class HomeController extends Controller
         return view('home', compact('jobs', 'totalJobs', 'duplicates'));
     }
 
+    public function about_us()
+    {
+        return view('about-us');
+    }
 
-    
+    public function how_i_apply()
+    {
+        return view('how-i-apply');
+    }
+
+    public function my_journey()
+    {
+        return view('my-journey');
+    }
+
+    public function where_i_work()
+    {
+        return view('where-i-work');
+    }
 }

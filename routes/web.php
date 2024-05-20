@@ -21,8 +21,10 @@ Auth::routes();
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/about', [App\Http\Controllers\Jobs\JobsController::class, 'about'])->name('about');
-Route::get('/contact', [App\Http\Controllers\Jobs\JobsController::class, 'contact'])->name('contact');
+Route::get('/about-us', [App\Http\Controllers\HomeController::class, 'about_us']);
+Route::get('/how-i-apply', [App\Http\Controllers\HomeController::class, 'how_i_apply']);
+Route::get('/my-journey', [App\Http\Controllers\HomeController::class, 'my_journey']);
+Route::get('/where-i-work', [App\Http\Controllers\HomeController::class, 'where_i_work']);
 
 Route::group(['prefix' => 'jobs'], function() {
     Route::get('single/{id}', [App\Http\Controllers\Jobs\JobsController::class, 'single'])->name('single.job');
@@ -32,12 +34,12 @@ Route::group(['prefix' => 'jobs'], function() {
 
 });
 
-Route::group(['prefix' => 'categories'], function() { 
+Route::group(['prefix' => 'categories'], function() {
     Route::get('/single/{name}', [App\Http\Controllers\Categories\CategoriesController::class, 'singleCategory'])->name('categories.single');
 });
 
 
-Route::group(['prefix' => 'users'], function() { 
+Route::group(['prefix' => 'users'], function() {
     Route::get('profile', [App\Http\Controllers\Users\UsersController::class, 'profile'])->name('profile');
     Route::get('applications', [App\Http\Controllers\Users\UsersController::class, 'applications'])->name('applications');
     Route::get('savedjobs', [App\Http\Controllers\Users\UsersController::class, 'savedJobs'])->name('saved.jobs');
@@ -55,7 +57,7 @@ Route::get('admin/login', [App\Http\Controllers\Admins\AdminsController::class, 
 Route::post('admin/login', [App\Http\Controllers\Admins\AdminsController::class, 'checkLogin'])->name('check.login');
 
 
-Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function() { 
+Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function() {
 
     Route::get('/', [App\Http\Controllers\Admins\AdminsController::class, 'index'])->name('admins.dashboard');
     Route::get('/all-admins', [App\Http\Controllers\Admins\AdminsController::class, 'admins'])->name('view.admins');

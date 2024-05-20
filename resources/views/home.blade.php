@@ -585,7 +585,7 @@
 
   </section>
 
-  <section class="py-5 bg-image overlay-primary fixed overlay" id="next" style="background-image: url('images/hero_1.jpg');">
+  <!--<section class="py-5 bg-image overlay-primary fixed overlay" id="next" style="background-image: url('images/hero_1.jpg');">
     <div class="container">
       <div class="row mb-5 justify-content-center">
         <div class="col-md-7 text-center">
@@ -626,7 +626,7 @@
 
       </div>
     </div>
-  </section>
+  </section>-->
 
 
 
@@ -676,7 +676,7 @@
     </div>
   </section>
 
-  <section class="py-5 bg-image overlay-primary fixed overlay" style="background-image: url('images/hero_1.jpg');">
+  <!--<section class="py-5 bg-image overlay-primary fixed overlay" style="background-image: url('images/hero_1.jpg');">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-md-8">
@@ -688,7 +688,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </section>-->
 
 
   <!--<section class="site-section py-4">

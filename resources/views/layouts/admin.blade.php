@@ -69,7 +69,7 @@
           @else
 
             <li class="nav-item">
-              <a class="nav-link" href="{{ route('view.login') }}">login
+              <a class="nav-link" href="{{ route('view.login') }}" style="color:white">login
                 <span class="sr-only">(current)</span>
               </a>
             </li>
@@ -79,7 +79,7 @@
       </div>
     </div>
     </nav>
-    <div class="container-fluid">
+    <div class="container py-5">
         <main class="py-4">
             @yield('content')
         </main>

@@ -1,57 +1,98 @@
 @extends('layouts.app')
+@section('head')
+    <title>Login</title>
 
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="assets/images/logo/favicon.png">
+
+    <!-- page css -->
+
+    <!-- Core css -->
+    <link href="assets/css/app.min.css" rel="stylesheet">
+@endsection
 @section('content')
+    <div class="app">
+        <div class="container-fluid p-h-0 p-v-20 bg full-height d-flex" style="background-image: url('assets/images/others/login-3.png')">
 
-
-<section class="section-hero overlay inner-page bg-image" style="margin-top: -24px; background-image: url({{ asset('assets/images/hero_1.jpg') }});" id="home-section">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-7">
-          <h1 class="text-white font-weight-bold">Log In</h1>
-          <div class="custom-breadcrumbs">
-            <a href="/">Home</a> <span class="mx-2 slash">/</span>
-            <span class="text-white"><strong>Log In</strong></span>
-          </div>
+            <div class="d-flex flex-column justify-content-between w-100">
+                <div class="container">
+                    <div class="row">
+                      <div class="col-md-7">
+                        <h1 class="text-white font-weight-bold">Log In</h1>
+                        <div class="custom-breadcrumbs">
+                          <a href="/">Home</a> <span class="mx-2 slash">/</span>
+                          <span class="text-white"><strong>Log In</strong></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                <div class="container d-flex h-100">
+                    <div class="row align-items-center w-100">
+                        <div class="col-md-7 col-lg-5 m-h-auto">
+                            <div class="card shadow-lg">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center justify-content-between m-b-30">
+                                        <img class="img-fluid" alt="" src="assets/images/logo/logo.png">
+                                        <h2 class="m-b-0">Sign In</h2>
+                                    </div>
+                                    <form  action="{{ route('login') }}" method="POST">
+                                        @csrf
+                                        <div class="form-group">
+                                            <label class="font-weight-semibold" for="userName">Email:</label>
+                                            <div class="input-affix">
+                                                <i class="prefix-icon anticon anticon-user"></i>
+                                                <input  id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                                @error('email')
+                                                <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="font-weight-semibold" for="password">Password:</label>
+                                            <!--<a class="float-right font-size-13 text-muted" href="">Forget Password?</a>-->
+                                            <div class="input-affix m-b-10">
+                                                <i class="prefix-icon anticon anticon-lock"></i>
+                                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <span class="font-size-13 text-muted">
+                                                    Don't have an account?
+                                                    <a class="small" href="/register"> Signup</a>
+                                                </span>
+                                                <button class="btn btn-primary">Sign In</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-none d-md-flex p-h-40 justify-content-between">
+                    <span class=""></span>
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <a class="text-dark text-link" href="">Legal</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="text-dark text-link" href="">Privacy</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-</section>
-<div class="container">
-    <div class="row justify-content-center">
-
-        <div class="col-md-12">
 
 
-            <form style="margin-top: 35px;" action="{{ route('login') }}" method="POST" class="p-4 border rounded">
-                @csrf
+    <!-- Core Vendors JS -->
+    <script src="assets/js/vendors.min.js"></script>
 
-                <div class="row form-group">
-                  <div class="col-md-12 mb-3 mb-md-0">
-                    <label class="text-black" for="fname">Email</label>
-                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-                    @error('email')
-                    <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
-                  </div>
-                </div>
-                <div class="row form-group mb-4">
-                  <div class="col-md-12 mb-3 mb-md-0">
-                    <label class="text-black" for="fname">Password</label>
-                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-                  </div>
-                </div>
+    <!-- page js -->
 
-                <div class="row form-group">
-                  <div class="col-md-12">
-                    <input type="submit" name="submit" value="Log In" class="btn px-4 btn-primary text-white">
-                  </div>
-                </div>
-
-              </form>
-
-        </div>
-    </div>
-</div>
+    <!-- Core JS -->
+    <script src="assets/js/app.min.js"></script>
 @endsection

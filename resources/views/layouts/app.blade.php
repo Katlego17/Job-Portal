@@ -11,7 +11,7 @@
 
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
-
+    @yield('head')
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
@@ -33,10 +33,6 @@
             <nav class="mx-auto site-navigation">
               <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
                 <li style="padding-left: 544px;"><a href="{{ url('/') }}" class="nav-link active">Home</a></li>
-                <!--<li><a href="{{ route('about') }}">About</a></li>-->
-
-
-                <!--<li><a href="{{ route('contact') }}">Contact</a></li>-->
                 <li class="d-lg-none"><a href="post-job.html"><span class="mr-2">+</span> Post a Job</a></li>
                 @guest
                     @if (Route::has('login'))
@@ -99,7 +95,7 @@
 
 
 
-        <main class="py-4">
+        <main>
             @yield('content')
         </main>
     </div>
@@ -163,6 +159,7 @@
 
 
     <!-- SCRIPTS -->
+    @yield('page-js')
     <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
     <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('assets/js/isotope.pkgd.min.js') }}"></script>

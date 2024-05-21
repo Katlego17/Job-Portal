@@ -440,7 +440,7 @@
                             Job</h1>
                             <form method="post" action="{{ route('search.job') }}" >
                                 @csrf
-                        <div class="row align-items-center">
+                            <div class="row align-items-center">
 
                             <div class="col-12 col-sm-3 p-b-15" style="display: flex;">
                                 <input class="form-control form-control-lg" name="job_title"  type="text" placeholder="Job Title">
@@ -471,7 +471,7 @@
                                 </select>
                             </div>
                             <div class="col-12 col-sm-3 p-b-15">
-                                <a ></a><button  name="submit" type="submit" class="btn btn-default btn-block">Search Jobs</button> </a>
+                                <button  name="submit" type="submit" class="btn btn-default btn-block">Search Jobs</button>
                             </div>
                         </form>
                         </div>

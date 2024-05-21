@@ -16,7 +16,7 @@ use DB;
 
 class JobsController extends Controller
 {
-    
+
 
 
     public function single($id) {
@@ -34,23 +34,23 @@ class JobsController extends Controller
         $relatedJobsCount = Job::where('category', $job->category)
          ->where('id', '!=',  $id)
          ->take(5)
-         ->count(); 
+         ->count();
 
          $categories = DB::table('categories')
          ->join('jobs', 'jobs.category', '=', 'categories.name')
          ->select('categories.name AS name', 'categories.id AS id', DB::raw('COUNT(jobs.category) AS total'))
-         ->groupBy('jobs.category')  
-         ->get(); 
+         ->groupBy('jobs.category')
+         ->get();
 
         //save job
         if(auth()->user()) {
             $savedJob = JobSaved::where('job_id', $id)
             ->where('user_id', Auth::user()->id)
             ->count();
-   
-   
+
+
            //verfining if user applied to job
-           
+
            $appliedJob = Application::where('user_id', Auth::user()->id)
             ->where('job_id', $id)
             ->count();
@@ -63,9 +63,9 @@ class JobsController extends Controller
             return view('jobs.single', compact('job', 'relatedJobs', 'relatedJobsCount', 'categories'));
 
         }
-       
 
-      
+
+
     }
 
 
@@ -111,13 +111,13 @@ class JobsController extends Controller
 
             if($applyJob) {
                 return redirect('/jobs/single/'.$request->job_id.'')->with('applied', 'you applied to this job successfully');
-    
+
             }
         }
 
-       
 
-        
+
+
 
     }
 
@@ -127,7 +127,7 @@ class JobsController extends Controller
             "job_title" => "required",
             "job_region" => "required",
             "job_type" => "required",
-         
+
         ]);
 
 
@@ -139,15 +139,14 @@ class JobsController extends Controller
         $job_region = $request->get('job_region');
         $job_type = $request->get('job_type');
 
-        $searches = Job::select()->where('job_title', 'like', "%$job_title%")
-         ->where('job_region', 'like', "%$job_region%")
-         ->where('job_type', 'like', "%$job_type%")
+        $searches = Job::Where('job_title', 'like', '%' . $job_title . '%')
+         ->orWhere('job_region', $job_region)
+         ->orWhere('job_type',  $job_type)
          ->get();
-
 
         return view('jobs.search', compact('searches'));
     }
-    
+
 
     public function about()
     {
@@ -162,7 +161,7 @@ class JobsController extends Controller
 
         return view('pages.contact');
     }
-    
-    
-    
+
+
+
 }

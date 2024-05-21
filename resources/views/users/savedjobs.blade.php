@@ -179,7 +179,7 @@
                             <div class="col-md-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h2 class="p-b-10 text-center">CV</h2>
+                                        <h2 class="p-b-10 text-center">Saved Jobs</h2>
 
                                         <div class="row">
                                             @if ($savedJobs->count() > 0)

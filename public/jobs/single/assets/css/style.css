@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+:root {
+    --c-greendark: #084b39;
+    --c-greenlight: #2f6439;
+    --white-: #ffffff;
+    --c-orangedark: #d46216;
+    --font-base: "Montserrat", san-serif;
+    --transition: all 0.5s ease;
+}
+
+body {
+    font-family: var(--font-base);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    font-weight: 600;
+    font-family: var(--font-base);
+}
+
+a {
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+
+/* img {
+    max-width: 100%;
+    height: auto;
+} */
+
+.section-padding {
+    padding-top: 140px;
+    padding-bottom: 140px;
+}
+
+
+/* Navbar */
+
+.navbar {
+    padding: 15px 18px !important;
+}
+
+.nav-item {
+    margin: 0px 10px;
+}
+
+.navbar-nav .nav-link {
+    font-weight: 600;
+    color: var(--c-greendark);
+}
+
+.container-fluid {
+    background-color: #084b39;
+    align-items: center;
+}
+
+.btn.btn-primary {
+    background-color: white;
+    color: #084b39;
+    border-radius: 0px;
+    border: #084b39;
+}
+
+.btn.btn-primary:hover {
+    background-color: #2f6439;
+    color: #ffffff;
+}
+
+.value-icons {
+    height: 80px;
+}
+
+.btn.btn-secondary {
+    background-color: #084b39;
+    border-radius: 0px;
+}
+
+.btn.btn-secondary:hover {
+    background-color: #ffffff;
+    color: #084b39;
+}
+
+.footernav ul {
+    display: flex;
+    list-style: none;
+    flex-basis: 100%;
+}
+
+.btn.btn-success {
+    border-radius: 0px;
+    background-color: #ffffff;
+    color: #084b39;
+}
+
+.btn.btn-success:hover {
+    background-color: #084b39;
+    color: #ffffff;
+}
+
+.footer-img {
+    width: 50%;
+}
+
+.logo-img {
+    height: 60px;
+}
+
+h2 {
+    color: #084b39;
+}
+
+
+/* Responsive */
+
+@media screen and (max-width: 800px) {
+    .tef {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 801px) {
+    .tef1 {
+        display: none;
+    }
+}

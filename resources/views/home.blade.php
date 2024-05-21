@@ -259,274 +259,461 @@
 
 </html>
 @else
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="en">
 
-@section('content')
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Opportunities</title>
 
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="assets/images/logo/favicon.png">
 
+    <!-- page css -->
 
-<!-- HOME -->
-<section class="home-section section-hero overlay bg-image" style=" margin-top: -24px; background-image: url('{{ asset('assets/images/hero_1.jpg') }}');" id="home-section">
+    <!-- Core css -->
+    <link href="assets/css/app.min.css" rel="stylesheet">
+    <link href="assets/vendors/select2/select2.css" rel="stylesheet">
 
-    <div class="container">
-      <div class="row align-items-center justify-content-center">
-        <div class="col-md-12">
-          <div class="mb-5 text-center">
-            <h1 class="text-white font-weight-bold">The Easiest Way To Get Your Dream Job</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate est, consequuntur perferendis.</p>
-          </div>
-          <form method="post" action="{{ route('search.job') }}" class="search-jobs-form">
-            @csrf
-            <div class="row mb-5">
-              <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
-                <input name="job_title" type="text" class="form-control form-control-lg" placeholder="Job title">
-              </div>
-              <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
-                <select name="job_region" class="selectpicker" data-style="btn-white btn-lg" data-width="100%" data-live-search="true" title="Select Region">
-                    <option>Anywhere</option>
-                    <option>Gauteng</option>
-                    <option>Western Cape</option>
-                    <option>KwaZulu-Natal</option>
-                    <option>Eastern Cape</option>
-                    <option>Free State</option>
-                    <option>Limpopo</option>
-                    <option>Mpumalanga</option>
-                    <option>Northern Cape</option>
-                    <option>North West</option>
-                </select>
-              </div>
-              <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
-                <select name="job_type" class="selectpicker" data-style="btn-white btn-lg" data-width="100%" data-live-search="true" title="Select Job Type">
-                  <option>Part Time</option>
-                  <option>Full Time</option>
-                </select>
-              </div>
-              <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0"style="color: #084b39">
-                <button name="submit" type="submit" class="btn btn-success btn-lg btn-block text-white btn-search" ><span class="icon-search icon mr-2"></span>Search Job</button>
-              </div>
+</head>
+
+<body>
+    <div class="app">
+        <div class="layout">
+            <!-- Header START -->
+            <div class="header">
+                <div class="logo logo-dark">
+                    <a href="index.html">
+                        <img src="assets/images/logo/logo.png" alt="Logo">
+                        <img class="logo-fold" src="assets/images/logo/logo-fold.png" alt="Logo">
+                    </a>
+                </div>
+                <div class="logo logo-white">
+                    <a href="index.html">
+                        <img src="assets/images/logo/logo-white.png" alt="Logo">
+                        <img class="logo-fold" src="assets/images/logo/logo-fold-white.png" alt="Logo">
+                    </a>
+                </div>
+                <div class="nav-wrap">
+                    <ul class="nav-left">
+                        <li class="desktop-toggle">
+                            <a href="javascript:void(0);">
+                                <i class="anticon"></i>
+                            </a>
+                        </li>
+                        <li class="mobile-toggle">
+                            <a href="javascript:void(0);">
+                                <i class="anticon"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <!--<a href="javascript:void(0);" data-toggle="modal" data-target="#search-drawer">
+                                <i class="anticon anticon-search"></i>
+                            </a>-->
+                        </li>
+                    </ul>
+                    <ul class="nav-right">
+
+                        <li class="dropdown dropdown-animated scale-left">
+                            <div class="pointer" data-toggle="dropdown">
+                                <div class="avatar avatar-image  m-h-10 m-r-15">
+                                    <img src="assets/images/avatars/thumb-3.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="p-b-15 p-t-20 dropdown-menu pop-profile">
+                                <div class="p-h-20 p-b-15 m-b-10 border-bottom">
+                                    <div class="d-flex m-r-50">
+                                        <div class="avatar avatar-lg avatar-image">
+                                            <img src="assets/images/avatars/thumb-3.jpg" alt="">
+                                        </div>
+                                        <div class="m-l-10">
+                                            <p class="m-b-0 text-dark font-weight-semibold">{{ Auth::user()->name }}</p>
+                                            <p class="m-b-0 opacity-07">{{ Auth::user()->job_title }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="{{ route('profile') }}" class="dropdown-item d-block p-h-15 p-v-10">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div>
+                                            <i class="anticon opacity-04 font-size-16 anticon-user"></i>
+                                            <span class="m-l-10">Profile</span>
+                                        </div>
+                                        <i class="anticon font-size-10 anticon-right"></i>
+                                    </div>
+                                </a>
+                                <a href="{{ route('edit.details') }}" class="dropdown-item d-block p-h-15 p-v-10">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div>
+                                            <i class="anticon opacity-04 font-size-16 anticon-lock"></i>
+                                            <span class="m-l-10">Update Details</span>
+                                        </div>
+                                        <i class="anticon font-size-10 anticon-right"></i>
+                                    </div>
+                                </a>
+                                <a href="{{ route('edit.cv') }}" class="dropdown-item d-block p-h-15 p-v-10">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div>
+                                            <i class="anticon opacity-04 font-size-16 anticon-project"></i>
+                                            <span class="m-l-10">Update CV</span>
+                                        </div>
+                                        <i class="anticon font-size-10 anticon-right"></i>
+                                    </div>
+                                </a>
+                                <a href="{{ route('logout') }}" class="dropdown-item d-block p-h-15 p-v-10">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div>
+                                            <i class="anticon opacity-04 font-size-16 anticon-logout"></i>
+                                            <span class="m-l-10">Logout</span>
+                                        </div>
+                                        <i class="anticon font-size-10 anticon-right"></i>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
             </div>
-            <div class="row">
-              <div class="col-md-12 popular-keywords">
-                <h3>Trending Keywords:</h3>
-                <ul class="keywords list-unstyled m-0 p-0">
-                  @foreach ($duplicates as $duplicate)
-                   <li><a href="#" class="">{{ $duplicate->keyword }}</a></li>
+            <!-- Header END -->
 
-                  @endforeach
+            <!-- Side Nav START -->
+            <div class="side-nav">
+                <div class="side-nav-inner">
+                    <ul class="side-nav-menu scrollable">
+                        <li class="nav-item dropdown open">
+                            <a class="dropdown-toggle" href="javascript:void(0);">
+                                <span class="icon-holder">
+                                    <i class="anticon anticon-dashboard"></i>
+                                </span>
+                                <span class="title">Dashboard</span>
+                                <span class="arrow">
+                                    <i class="arrow-icon"></i>
+                                </span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="/home">Opportunities</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('applications') }}">Applications</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('saved.jobs') }}">Saved Jobs</a>
+                                </li>
 
-                </ul>
-              </div>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="dropdown-toggle" href="{{ route('logout') }}">
+                                <span class="icon-holder">
+                                    <i class="anticon anticon-unlock"></i>
+                                </span>
+                                <span class="title">Logout</span>
+                                <span class="arrow">
+
+                                </span>
+                            </a>
+
+                        </li>
+
+
+
+
+                    </ul>
+                </div>
             </div>
-          </form>
+            <!-- Side Nav END -->
+
+            <!-- Page Container START -->
+            <div class="page-container ">
+
+
+
+                <!-- Content Wrapper START -->
+                <div class="main-content">
+                    <div class="container-fluid p-t-50 p-b-100" style="background-color: #084b39;">
+                        <h1 class="text-center m-b-50 m-t-50" style="color: white;">The Easiest Way To Get Your Dream
+                            Job</h1>
+                            <form method="post" action="{{ route('search.job') }}" >
+                                @csrf
+                        <div class="row align-items-center">
+
+                            <div class="col-12 col-sm-3 p-b-15" style="display: flex;">
+                                <input class="form-control form-control-lg" name="job_title"  type="text" placeholder="Job Title">
+                            </div>
+                            <div class="col-12 col-sm-3  p-b-15" style="display: flex;">
+                                <!-- Single select boxes -->
+                                <h6 class="text-light">Select Region</h6>
+                                <select name="job_region" data-live-search="true"  class="form-control">
+                                    <option>Anywhere</option>
+                                    <option value="AP">Gauteng</option>
+                                    <option>Mpumalanga</option>
+                                    <option>Limpopo</option>
+                                    <option>North West</option>
+                                    <option>Kwa-Zulu Natal</option>
+                                    <option>Western Cape</option>
+                                    <option>Eastern Cape</option>
+                                    <option>Northern Cape</option>
+                                </select>
+
+                            </div>
+                            <div class="col-12 col-sm-3  p-b-15" style="display: flex;">
+                                <!-- Single select boxes -->
+                                <h6 class="text-light">Select Type</h6>
+                                <select name="job_type" class="form-control" data-live-search="true" title="Select Job Type">
+                                    <option>Full Time</option>
+                                    <option>Part Time</option>
+
+                                </select>
+                            </div>
+                            <div class="col-12 col-sm-3 p-b-15">
+                                <a ></a><button  name="submit" type="submit" class="btn btn-default btn-block">Search Jobs</button> </a>
+                            </div>
+                        </form>
+                        </div>
+                    </div>
+
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-sm-8 p-v-60">
+
+                                <h3>{{ $totalJobs }} Jobs Listed</h3>
+
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            @foreach ($jobs as $job)
+                                <div class="col-sm">
+                                    <a href="{{ route('single.job', $job->id) }}">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <h4>{{ $job->job_title }}ttt</h4>
+                                                <h6> {{ $job->job_region }}</h6>
+                                                <p></p>
+                                                <p><strong>{{ $job->company }}</strong></p>
+
+                                            </div>
+                                            <div class="card-footer">
+                                                <!--<div class="text-right">
+                                                    <button class="btn btn-default m-r-5">Save Job</button>
+                                                    <button class="btn btn-primary">Apply</button>
+                                                </div>-->
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Content Wrapper END -->
+
+                <!-- Footer START -->
+                <footer class="footer">
+                    <div class="footer-content justify-content-between">
+                        <p class="m-b-0">Copyright © All rights reserved.</p>
+                        <span>
+                            <a href="" class="text-gray m-r-15">Term &amp; Conditions</a>
+                            <a href="" class="text-gray">Privacy &amp; Policy</a>
+                        </span>
+                    </div>
+                </footer>
+                <!-- Footer END -->
+
+            </div>
+            <!-- Page Container END -->
+
+            <!-- Search Start-->
+            <div class="modal modal-left fade search" id="search-drawer">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header justify-content-between align-items-center">
+                            <h5 class="modal-title">Search</h5>
+                            <button type="button" class="close" data-dismiss="modal">
+                                <i class="anticon anticon-close"></i>
+                            </button>
+                        </div>
+                        <div class="modal-body scrollable">
+                            <div class="input-affix">
+                                <i class="prefix-icon anticon anticon-search"></i>
+                                <input type="text" class="form-control" placeholder="Search">
+                            </div>
+                            <div class="m-t-30">
+                                <h5 class="m-b-20">Files</h5>
+                                <div class="d-flex m-b-30">
+                                    <div class="avatar avatar-cyan avatar-icon">
+                                        <i class="anticon anticon-file-excel"></i>
+                                    </div>
+                                    <div class="m-l-15">
+                                        <a href="javascript:void(0);"
+                                            class="text-dark m-b-0 font-weight-semibold">Quater Report.exl</a>
+                                        <p class="m-b-0 text-muted font-size-13">by Finance</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex m-b-30">
+                                    <div class="avatar avatar-blue avatar-icon">
+                                        <i class="anticon anticon-file-word"></i>
+                                    </div>
+                                    <div class="m-l-15">
+                                        <a href="javascript:void(0);"
+                                            class="text-dark m-b-0 font-weight-semibold">Documentaion.docx</a>
+                                        <p class="m-b-0 text-muted font-size-13">by Developers</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex m-b-30">
+                                    <div class="avatar avatar-purple avatar-icon">
+                                        <i class="anticon anticon-file-text"></i>
+                                    </div>
+                                    <div class="m-l-15">
+                                        <a href="javascript:void(0);"
+                                            class="text-dark m-b-0 font-weight-semibold">Recipe.txt</a>
+                                        <p class="m-b-0 text-muted font-size-13">by The Chef</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex m-b-30">
+                                    <div class="avatar avatar-red avatar-icon">
+                                        <i class="anticon anticon-file-pdf"></i>
+                                    </div>
+                                    <div class="m-l-15">
+                                        <a href="javascript:void(0);"
+                                            class="text-dark m-b-0 font-weight-semibold">Project Requirement.pdf</a>
+                                        <p class="m-b-0 text-muted font-size-13">by Project Manager</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="m-t-30">
+                                <h5 class="m-b-20">Members</h5>
+                                <div class="d-flex m-b-30">
+                                    <div class="avatar avatar-image">
+                                        <img src="assets/images/avatars/thumb-1.jpg" alt="">
+                                    </div>
+                                    <div class="m-l-15">
+                                        <a href="javascript:void(0);" class="text-dark m-b-0 font-weight-semibold">Erin
+                                            Gonzales</a>
+                                        <p class="m-b-0 text-muted font-size-13">UI/UX Designer</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex m-b-30">
+                                    <div class="avatar avatar-image">
+                                        <img src="assets/images/avatars/thumb-2.jpg" alt="">
+                                    </div>
+                                    <div class="m-l-15">
+                                        <a href="javascript:void(0);"
+                                            class="text-dark m-b-0 font-weight-semibold">Darryl Day</a>
+                                        <p class="m-b-0 text-muted font-size-13">Software Engineer</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex m-b-30">
+                                    <div class="avatar avatar-image">
+                                        <img src="assets/images/avatars/thumb-3.jpg" alt="">
+                                    </div>
+                                    <div class="m-l-15">
+                                        <a href="javascript:void(0);"
+                                            class="text-dark m-b-0 font-weight-semibold">Marshall Nichols</a>
+                                        <p class="m-b-0 text-muted font-size-13">Data Analyst</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="m-t-30">
+                                <h5 class="m-b-20">News</h5>
+                                <div class="d-flex m-b-30">
+                                    <div class="avatar avatar-image">
+                                        <img src="assets/images/others/img-1.jpg" alt="">
+                                    </div>
+                                    <div class="m-l-15">
+                                        <a href="javascript:void(0);" class="text-dark m-b-0 font-weight-semibold">5
+                                            Best Handwriting Fonts</a>
+                                        <p class="m-b-0 text-muted font-size-13">
+                                            <i class="anticon anticon-clock-circle"></i>
+                                            <span class="m-l-5">25 Nov 2018</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Search End-->
+
+            <!-- Quick View START -->
+            <div class="modal modal-right fade quick-view" id="quick-view">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header justify-content-between align-items-center">
+                            <h5 class="modal-title">Theme Config</h5>
+                        </div>
+                        <div class="modal-body scrollable">
+                            <div class="m-b-30">
+                                <h5 class="m-b-0">Header Color</h5>
+                                <p>Config header background color</p>
+                                <div class="theme-configurator d-flex m-t-10">
+                                    <div class="radio">
+                                        <input id="header-default" name="header-theme" type="radio" checked
+                                            value="default">
+                                        <label for="header-default"></label>
+                                    </div>
+                                    <div class="radio">
+                                        <input id="header-primary" name="header-theme" type="radio" value="primary">
+                                        <label for="header-primary"></label>
+                                    </div>
+                                    <div class="radio">
+                                        <input id="header-success" name="header-theme" type="radio" value="success">
+                                        <label for="header-success"></label>
+                                    </div>
+                                    <div class="radio">
+                                        <input id="header-secondary" name="header-theme" type="radio" value="secondary">
+                                        <label for="header-secondary"></label>
+                                    </div>
+                                    <div class="radio">
+                                        <input id="header-danger" name="header-theme" type="radio" value="danger">
+                                        <label for="header-danger"></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <div>
+                                <h5 class="m-b-0">Side Nav Dark</h5>
+                                <p>Change Side Nav to dark</p>
+                                <div class="switch d-inline">
+                                    <input type="checkbox" name="side-nav-theme-toogle" id="side-nav-theme-toogle">
+                                    <label for="side-nav-theme-toogle"></label>
+                                </div>
+                            </div>
+                            <hr>
+                            <div>
+                                <h5 class="m-b-0">Folded Menu</h5>
+                                <p>Toggle Folded Menu</p>
+                                <div class="switch d-inline">
+                                    <input type="checkbox" name="side-nav-fold-toogle" id="side-nav-fold-toogle">
+                                    <label for="side-nav-fold-toogle"></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Quick View END -->
         </div>
-      </div>
     </div>
 
-    <a href="#next" class="scroll-button smoothscroll">
-      <span class=" icon-keyboard_arrow_down"></span>
-    </a>
 
-  </section>
+    <!-- Core Vendors JS -->
+    <script src="assets/js/vendors.min.js"></script>
 
-  <!--<section class="py-5 bg-image overlay-primary fixed overlay" id="next" style="background-image: url('images/hero_1.jpg');">
-    <div class="container">
-      <div class="row mb-5 justify-content-center">
-        <div class="col-md-7 text-center">
-          <h2 class="section-title mb-2 text-white">JobBoard Site Stats</h2>
-          <p class="lead text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita unde officiis recusandae sequi excepturi corrupti.</p>
-        </div>
-      </div>
-      <div class="row pb-0 block__19738 section-counter">
+    <!-- page js -->
+    <script src="assets/vendors/chartjs/Chart.min.js"></script>
+    <script src="assets/js/pages/dashboard-default.js"></script>
 
-        <div class="col-6 col-md-6 col-lg-3 mb-5 mb-lg-0">
-          <div class="d-flex align-items-center justify-content-center mb-2">
-            <strong class="number" data-number="1930">0</strong>
-          </div>
-          <span class="caption">Candidates</span>
-        </div>
+    <!-- Core JS -->
+    <script src="assets/js/app.min.js"></script>
+    <!-- page js -->
+    <script src="assets/vendors/select2/select2.min.js"></script>
 
-        <div class="col-6 col-md-6 col-lg-3 mb-5 mb-lg-0">
-          <div class="d-flex align-items-center justify-content-center mb-2">
-            <strong class="number" data-number="54">0</strong>
-          </div>
-          <span class="caption">Jobs Posted</span>
-        </div>
+</body>
 
-        <div class="col-6 col-md-6 col-lg-3 mb-5 mb-lg-0">
-          <div class="d-flex align-items-center justify-content-center mb-2">
-            <strong class="number" data-number="120">0</strong>
-          </div>
-          <span class="caption">Jobs Filled</span>
-        </div>
-
-        <div class="col-6 col-md-6 col-lg-3 mb-5 mb-lg-0">
-          <div class="d-flex align-items-center justify-content-center mb-2">
-            <strong class="number" data-number="550">0</strong>
-          </div>
-          <span class="caption">Companies</span>
-        </div>
-
-
-      </div>
-    </div>
-  </section>-->
-
-
-
-  <section class="site-section">
-    <div class="container">
-
-      <div class="row mb-5 justify-content-center">
-        <div class="col-md-7 text-center">
-          <h2 class="section-title mb-2">{{ $totalJobs }} Jobs Listed</h2>
-        </div>
-      </div>
-
-      <ul class="job-listings mb-5">
-
-        @foreach ($jobs as $job)
-          <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
-            <a href="{{ route('single.job', $job->id) }}"></a>
-            <div class="job-listing-logo">
-              <img src="{{ asset('assets/images/'.$job->image.'') }}" alt="Free Website Template by Free-Template.co" class="img-fluid">
-            </div>
-
-            <div class="job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4">
-              <div class="job-listing-position custom-width w-50 mb-3 mb-sm-0">
-                <h2>{{ $job->job_title }}</h2>
-                <strong>{{ $job->company }}</strong>
-              </div>
-              <div class="job-listing-location mb-3 mb-sm-0 custom-width w-25">
-                <span class="icon-room"></span> {{ $job->job_region }}
-              </div>
-              <div class="job-listing-meta">
-                <span class="badge badge-danger">{{ $job->job_type }}</span>
-              </div>
-            </div>
-
-          </li>
-        @endforeach
-
-
-
-
-
-
-      </ul>
-
-
-
-    </div>
-  </section>
-
-  <!--<section class="py-5 bg-image overlay-primary fixed overlay" style="background-image: url('images/hero_1.jpg');">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-md-8">
-          <h2 class="text-white">Looking For A Job?</h2>
-          <p class="mb-0 text-white lead">Lorem ipsum dolor sit amet consectetur adipisicing elit tempora adipisci impedit.</p>
-        </div>
-        <div class="col-md-3 ml-auto">
-          <a href="#" class="btn btn-warning btn-block btn-lg">Sign Up</a>
-        </div>
-      </div>
-    </div>
-  </section>-->
-
-
-  <!--<section class="site-section py-4">
-    <div class="container">
-
-      <div class="row align-items-center">
-        <div class="col-12 text-center mt-4 mb-5">
-          <div class="row justify-content-center">
-            <div class="col-md-7">
-              <h2 class="section-title mb-2">Company We've Helped</h2>
-              <p class="lead">Porro error reiciendis commodi beatae omnis similique voluptate rerum ipsam fugit mollitia ipsum facilis expedita tempora suscipit iste</p>
-            </div>
-          </div>
-
-        </div>
-        <div class="col-6 col-lg-3 col-md-6 text-center">
-          <img src="{{ asset('assets/images/logo_mailchimp.svg') }}" alt="Image" class="img-fluid logo-1">
-        </div>
-        <div class="col-6 col-lg-3 col-md-6 text-center">
-          <img src="{{ asset('assets/images/logo_paypal.svg') }}" alt="Image" class="img-fluid logo-2">
-        </div>
-        <div class="col-6 col-lg-3 col-md-6 text-center">
-          <img src="{{ asset('assets/images/logo_stripe.svg') }}" alt="Image" class="img-fluid logo-3">
-        </div>
-        <div class="col-6 col-lg-3 col-md-6 text-center">
-          <img src="{{ asset('assets/images/logo_visa.svg') }}" alt="Image" class="img-fluid logo-4">
-        </div>
-
-        <div class="col-6 col-lg-3 col-md-6 text-center">
-          <img src="{{ asset('assets/images/logo_apple.svg') }}" alt="Image" class="img-fluid logo-5">
-        </div>
-        <div class="col-6 col-lg-3 col-md-6 text-center">
-          <img src="{{ asset('assets/images/logo_tinder.svg') }}" alt="Image" class="img-fluid logo-6">
-        </div>
-        <div class="col-6 col-lg-3 col-md-6 text-center">
-          <img src="{{ asset('assets/images/logo_sony.svg') }}" alt="Image" class="img-fluid logo-7">
-        </div>
-        <div class="col-6 col-lg-3 col-md-6 text-center">
-          <img src="{{ asset('assets/images/logo_airbnb.svg') }}" alt="Image" class="img-fluid logo-8">
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <section class="bg-light pt-5 testimony-full">
-
-      <div class="owl-carousel single-carousel">
-
-
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-6 align-self-center text-center text-lg-left">
-              <blockquote>
-                <p>&ldquo;Soluta quasi cum delectus eum facilis recusandae nesciunt molestias accusantium libero dolores repellat id in dolorem laborum ad modi qui at quas dolorum voluptatem voluptatum repudiandae.&rdquo;</p>
-                <p><cite> &mdash; Corey Woods, @Dribbble</cite></p>
-              </blockquote>
-            </div>
-            <div class="col-lg-6 align-self-end text-center text-lg-right">
-              <img src="{{ asset('assets/images/person_transparent_2.png') }}" alt="Image" class="img-fluid mb-0">
-            </div>
-          </div>
-        </div>
-
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-6 align-self-center text-center text-lg-left">
-              <blockquote>
-                <p>&ldquo;Soluta quasi cum delectus eum facilis recusandae nesciunt molestias accusantium libero dolores repellat id in dolorem laborum ad modi qui at quas dolorum voluptatem voluptatum repudiandae.&rdquo;</p>
-                <p><cite> &mdash; Chris Peters, @Google</cite></p>
-              </blockquote>
-            </div>
-            <div class="col-lg-6 align-self-end text-center text-lg-right">
-              <img src="{{ asset('assets/images/person_transparent.png') }}" alt="Image" class="img-fluid mb-0">
-            </div>
-          </div>
-        </div>
-
-    </div>
-
-  </section>
-
-  <section class="pt-5 bg-image overlay-primary fixed overlay" style="background-image: url('images/hero_1.jpg'); margin-bottom: -24px;">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6 align-self-center text-center text-md-left mb-5 mb-md-0">
-          <h2 class="text-white">Increase your chances</h2>
-          <p class="mb-5 lead text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit tempora adipisci impedit.</p>
-        </div>
-        <div class="col-md-6 ml-auto align-self-end">
-          <img src="{{ asset('assets/images/apps.png') }}" alt="Free Website Template by Free-Template.co" class="img-fluid">
-        </div>
-      </div>
-    </div>
-  </section>-->
-
-@endsection
+</html>
 @endguest

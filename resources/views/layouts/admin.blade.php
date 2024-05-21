@@ -99,12 +99,11 @@
                 </div>
             </div>
             <!-- Header END -->
-
+            @auth('admin')
             <!-- Side Nav START -->
             <div class="side-nav">
                 <div class="side-nav-inner">
-                    @guest
-                            @else
+
                     <ul class="side-nav-menu scrollable">
                         <li class="nav-item dropdown open">
 
@@ -151,12 +150,12 @@
                                 @csrf
                             </form>
                         </li>
-                         @endguest
+
                     </ul>
                 </div>
             </div>
             <!-- Side Nav END -->
-
+            @endauth
             <!-- Page Container START -->
             <div class="page-container">
                 <!-- Content Wrapper START -->

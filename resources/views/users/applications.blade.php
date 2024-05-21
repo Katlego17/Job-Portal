@@ -98,7 +98,7 @@
                                         <i class="anticon font-size-10 anticon-right"></i>
                                     </div>
                                 </a>
-                                <a href="{{ route('logout') }}" class="dropdown-item d-block p-h-15 p-v-10">
+                                <a href="javascript:void(0);" class="dropdown-item d-block p-h-15 p-v-10" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                     <div class="d-flex align-items-center justify-content-between">
                                         <div>
                                             <i class="anticon opacity-04 font-size-16 anticon-logout"></i>
@@ -107,6 +107,9 @@
                                         <i class="anticon font-size-10 anticon-right"></i>
                                     </div>
                                 </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
                             </div>
                         </li>
 
@@ -142,7 +145,7 @@
 
                             </ul>
                         </li>
-                        <li class="nav-item dropdown">
+                        <!--<li class="nav-item dropdown">
                             <a class="dropdown-toggle" href="{{ route('logout') }}">
                                 <span class="icon-holder">
                                     <i class="anticon anticon-unlock"></i>
@@ -151,7 +154,7 @@
                                 <span class="arrow">
 
                                 </span>
-                            </a>
+                            </a>-->
 
                         </li>
 

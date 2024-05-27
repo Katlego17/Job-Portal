@@ -5,13 +5,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Working on Green Buildings</title>
-    <link rel="icon" type="image/x-icon" href="/Assets/img/fav.png">
+    <link rel="icon" type="image/x-icon" href="/assets/img/fav.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet"
         href="https://unpkg.com/bs-brain@2.0.4/tutorials/timelines/timeline-6/assets/css/timeline-6.css">
-    <link rel="stylesheet" href="./Assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
@@ -19,7 +19,7 @@
     <nav class="navbar navbar-expand-lg bg-white sticky-top">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="./Assets/img/logo.png" alt="" class="logo-img">
+                <img src="./assets/img/logo.png" alt="" class="logo-img">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -282,7 +282,7 @@
                 </div>
 
                 <div class="col-12 col-lg-4 text-center">
-                    <img src="/Assets/img/logo-white.png" alt="" class="footer-img img-fluid">
+                    <img src="/assets/img/logo-white.png" alt="" class="footer-img img-fluid">
                 </div>
                 <div class="col-12 col-lg-4">
 

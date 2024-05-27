@@ -6,10 +6,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Working on Green Buildings</title>
-    <link rel="icon" type="image/x-icon" href="/Assets/img/fav.png">
+    <link rel="icon" type="image/x-icon" href="/assets/img/fav.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="./Assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
@@ -17,7 +17,7 @@
     <nav class="navbar navbar-expand-lg bg-white sticky-top">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="./Assets/img/logo.png" alt="" class="logo-img">
+                <img src="./assets/img/logo.png" alt="" class="logo-img">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -86,7 +86,7 @@
 
                     </div>
                     <div class="col-12 col-lg-6">
-                        <img src="./Assets/img/WOGB - Circular Digital Banner.png" class="img-fluid py-6" alt="...">
+                        <img src="./assets/img/WOGB - Circular Digital Banner.png" class="img-fluid py-6" alt="...">
                     </div>
                 </div>
             </div>
@@ -137,19 +137,19 @@
         <div class="row py-5 g-5">
 
             <div class="col-12 col-lg-4 d-inline-flex">
-                <img src="/Assets/img/Icons/WOGB Icons18.png" alt="" class="value-icons px-3 pb-3">
+                <img src="/assets/img/Icons/WOGB Icons18.png" alt="" class="value-icons px-3 pb-3">
                 <p>Foundational Skills Training: We offer foundational skills training to build a strong
                     knowledge base for
                     our participants.</p>
             </div>
             <div class="col-12 col-lg-4 d-inline-flex">
-                <img src="/Assets/img/Icons/WOGB Icons17.png" alt="" class="value-icons px-3 pb-3">
+                <img src="/assets/img/Icons/WOGB Icons17.png" alt="" class="value-icons px-3 pb-3">
                 <p class="fw-6">Skills Training Specific to IREREP Learning Areas: Our program includes skills training
                     specific to green building roles within the IREREP framework, preparing participants for careers in
                     sustainable construction.</p>
             </div>
             <div class="col-12 col-lg-4 d-inline-flex">
-                <img src="/Assets/img/Icons/WOGB Icons22.png" alt="" class="value-icons px-3 pb-3">
+                <img src="/assets/img/Icons/WOGB Icons22.png" alt="" class="value-icons px-3 pb-3">
                 <p class="fw-6">
                     Work Readiness Training: We provide work readiness training to develop professional skills and
                     emotional resilience, ensuring that our participants are ready for the workplace.
@@ -170,7 +170,7 @@
         <div class="container py-5">
             <div class="row align-items-center gx-5">
                 <div class="col-12 col-lg-6">
-                    <img src="/Assets/img/trans.jpg" alt="Transformation" class="transformation-img img-fluid py-5">
+                    <img src="/assets/img/trans.jpg" alt="Transformation" class="transformation-img img-fluid py-5">
                 </div>
 
                 <div class="col-12 col-lg-6">
@@ -236,7 +236,7 @@
                 </div>
 
                 <div class="col-12 col-lg-4 text-center">
-                    <img src="/Assets/img/logo-white.png" alt="" class="footer-img img-fluid">
+                    <img src="/assets/img/logo-white.png" alt="" class="footer-img img-fluid">
                 </div>
                 <div class="col-12 col-lg-4">
 

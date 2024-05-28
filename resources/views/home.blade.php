@@ -81,7 +81,7 @@
                             of jobs, enhancement of economic growth, improvement of existing businesses as well as the
                             encouragement and attraction of new businesses.</p>
 
-                        <a href="about-us.html" <button class="btn btn-primary py-3 px-5 d-inline-block">Learn
+                        <a href="/about-us" <button class="btn btn-primary py-3 px-5 d-inline-block">Learn
                             More</button></a>
 
                     </div>
@@ -158,7 +158,7 @@
         </div>
 
         <div class="text-center pb-4">
-            <a href="about-us.html"><button class="btn btn-secondary py-2 px-5">Read More</button></a>
+            <a href="/about-us"><button class="btn btn-secondary py-2 px-5">Read More</button></a>
         </div>
     </section>
 
@@ -216,7 +216,7 @@
             <div class="col-12 col-lg-12 text-center pb-5">
                 <a href="{{ route('register') }}"> <button class="btn btn-success py-2 px-5" style="border-color: #084b39;">Sign
                         Up</button></a>
-                <a href="how-i-apply.html"><button class="btn btn-secondary py-2 px-5">Learn More</button></a>
+                <a href="/how-i-apply"><button class="btn btn-secondary py-2 px-5">Learn More</button></a>
             </div>
 
         </div>

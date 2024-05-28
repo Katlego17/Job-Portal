@@ -242,8 +242,8 @@
 
     <div class="row">
         <div class="col-12 col-lg-12">
-            <h1 class="fs-1 text-center pt-5
-            " style="color: #084b39;">Join Us</h1>
+            <a href="/register"><h1 class="fs-1 text-center pt-5
+            " style="color: #084b39;">Join Us</h1></a>
         </div>
 
         <div class="col-12 col-lg-12">
@@ -255,7 +255,7 @@
 
         <div class="col-12 col-lg-12 text-center pb-5">
             <a href="#"><button class="btn btn-success py-2 px-5" style="border-color: #084b39;">Sign Up</button></a>
-            <a href="about-us.html"><button class="btn btn-secondary py-2 px-5">Learn More</button></a>
+            <a href="/about-us"><button class="btn btn-secondary py-2 px-5">Learn More</button></a>
         </div>
 
     </div>

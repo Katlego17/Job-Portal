@@ -15,17 +15,6 @@
         <div class="container-fluid p-h-0 p-v-20 bg full-height d-flex" style="background-image: url('assets/images/others/login-3.png')">
 
             <div class="d-flex flex-column justify-content-between w-100">
-                <div class="container">
-                    <div class="row">
-                      <div class="col-md-7">
-                        <h1 class="text-white font-weight-bold">Log In</h1>
-                        <div class="custom-breadcrumbs">
-                          <a href="/">Home</a> <span class="mx-2 slash">/</span>
-                          <span class="text-white"><strong>Log In</strong></span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
                 <div class="container d-flex h-100">
                     <div class="row align-items-center w-100">
                         <div class="col-md-7 col-lg-5 m-h-auto">

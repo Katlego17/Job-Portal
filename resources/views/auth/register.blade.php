@@ -21,7 +21,7 @@
                             <div class="card-body">
                                 <div class="d-flex align-items-center justify-content-between m-b-30">
                                     <img class="img-fluid" alt="" src="assets/images/logo/logo.png">
-                                    <h2 class="m-b-0">Sign In</h2>
+                                    <h2 class="m-b-0">Sign Up</h2>
                                 </div>
                                 <form method="POST" action="{{ route('register') }}" >
                                     @csrf

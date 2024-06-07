@@ -224,28 +224,28 @@
 
     <!-- End CTA -->
 
-    <!-- Footer Section -->
+     <!-- Footer Section -->
 
-    <section class="container-fluid">
+    <section class="container-fluid" style="background-color: white;">
         <div class="footernav container py-5">
             <div class="row ms-auto">
 
 
-                <div class="col-12 col-lg-4 text-center">
-
+                <div class="col-12 col-lg-4 text-center pb-4">
+                    <img src="/Assets/img/logo.png" alt="" class="footer-img img-fluid">
                 </div>
 
-                <div class="col-12 col-lg-4 text-center">
-                    <img src="/assets/img/logo-white.png" alt="" class="footer-img img-fluid">
+                <div class="col-12 col-lg-4 text-center pb-4">
+                    <img src="/Assets/img/irerep_logo.png" alt="" class="footer-img img-fluid">
                 </div>
-                <div class="col-12 col-lg-4">
-
+                <div class="col-12 col-lg-4 text-center">
+                    <img src="/Assets/img//epwp_ logo.png" alt="" class="footer-img img-fluid">
                 </div>
             </div>
         </div>
     </section>
     <section class="container-fluid py-2">
-        <div class="container text-center border-top">
+        <div class="container text-center">
             <p class="pt-4" style="font-size: 12px; color: white;"> Working On Green Buildings © All rights reserved.
             </p>
         </div>

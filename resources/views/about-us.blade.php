@@ -197,14 +197,14 @@
 
 
                 <div class="col-12 col-lg-4 text-center pb-4">
-                    <img src="/Assets/img/logo.png" alt="" class="footer-img img-fluid">
+                    <img src="/assets/img/logo.png" alt="" class="footer-img img-fluid">
                 </div>
 
                 <div class="col-12 col-lg-4 text-center pb-4">
-                    <img src="/Assets/img/irerep_logo.png" alt="" class="footer-img img-fluid">
+                    <img src="/assets/img/irerep_logo.png" alt="" class="footer-img img-fluid">
                 </div>
                 <div class="col-12 col-lg-4 text-center">
-                    <img src="/Assets/img//epwp_ logo.png" alt="" class="footer-img img-fluid">
+                    <img src="/assets/img//epwp_ logo.png" alt="" class="footer-img img-fluid">
                 </div>
             </div>
         </div>

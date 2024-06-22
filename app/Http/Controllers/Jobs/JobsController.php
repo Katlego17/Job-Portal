@@ -9,6 +9,8 @@ use App\Models\Category\Category;
 use App\Models\Job\JobSaved;
 use App\Models\Job\Application;
 use App\Models\Job\Search;
+use App\Notifications\JobApplicationNotification;
+use Illuminate\Support\Facades\Notification;
 
 use Auth;
 use DB;
@@ -92,11 +94,12 @@ class JobsController extends Controller
     public function jobApply(Request $request) {
 
 
-        if(Auth::user()->cv == 'No cv') {
-            return redirect('/jobs/single/'.$request->job_id.'')->with('apply', 'upload you CV first in the profile page');
-
-
-        } else {
+        if(Auth::user()->cv == 'No cv')
+        {
+            return redirect('/jobs/single/'.$request->job_id.'')->with('apply', 'upload your CV first in the profile page');
+        }
+        else
+        {
             $applyJob = Application::create([
                 'cv' => Auth::user()->cv,
                 'job_id' => $request->job_id,
@@ -109,16 +112,12 @@ class JobsController extends Controller
                 'company' => $request->company
             ]);
 
-            if($applyJob) {
+            if($applyJob)
+            {
+                Notification::route('mail', 'info@workingforgreen.co.za')->notify(new JobApplicationNotification($applyJob));
                 return redirect('/jobs/single/'.$request->job_id.'')->with('applied', 'you applied to this job successfully');
-
             }
         }
-
-
-
-
-
     }
 
     public function search(Request $request)

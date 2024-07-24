@@ -251,7 +251,7 @@
 
         <div class="col-12 col-lg-12 text-center pb-5">
             
-            <a href="about-us.html"><button class="btn btn-secondary py-2 px-5">View Vacancies</button></a>
+            <a href="https://workingforgreen.co.za/home"><button class="btn btn-secondary py-2 px-5">View Vacancies</button></a>
         </div>
 
     </div>

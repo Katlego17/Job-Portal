@@ -96,7 +96,7 @@
             
                         <div class="col-12 col-lg-12 text-center">
             
-                            <img src="/Assets/img/hia_infographic.webp" alt="" class="tef img-fluid">
+                            <img src="/Assets/img/hia_infographic.webp" alt="" class="img-fluid">
                           
             
                         </div>

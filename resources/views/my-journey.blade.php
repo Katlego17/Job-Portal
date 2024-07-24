@@ -113,8 +113,16 @@
                         including occupational health and safety, hand and power tools and equipment, and role-specific
                         learning areas.
                         Work Readiness: You will undergo training in personal mastery, work socialization, applied
-                        problem-solving, and work etiquette, ensuring you are prepared for the workplace.. <br>
+                        problem-solving, and work etiquette, ensuring you are prepared for the workplace. <br>
                     </p>
+                    <h2 class="fs-4">3. Reskilling and upskilling existing government department employees:</h2>
+                    <p class="fs-6">
+                        <p class="fs-6">
+
+                        Provide upskilling courses for employees in the maintenance workshops within government. <br>
+                    </p>
+
+                    
                 </div>
 
                 <div class="col-12 col-lg-6">

@@ -96,20 +96,17 @@
                     <h2 class="fs-4">1. National Senior Certificate:</h2>
                     <p class="fs-6">
                         If you have recently completed your National Senior Certificate (matric), you will embark on a
-                        rigorous 3-year artisan skills program, focusing on plumbing and electrical apprenticeship. The
+                        rigorous 1-year artisan skills program, focusing on plumbing and electrical apprenticeship. The
                         program includes: <br><br>
 
-                        Campus-Based Learning: You will undergo campus-based learning every year for 2 to 3 months,
-                        enhancing your theoretical knowledge and understanding of the trade.
-                        Employer-Based Learning: You will participate in employer-based learning every year for 9
-                        months, gaining practical experience in a real-world work environment.
-                        Employers typically offer stipends between R5000 and R8000 per month, although this is not
-                        guaranteed. <br>
+                        <strong>Campus-Based Learning:</strong> You will undergo campus-based learning for 2 to 3 months, enhancing your 
+                        theoretical knowledge and understanding of the trade. Employer-Based Learning: You will participate 
+                        in employer-based learning for 9 months, gaining practical experience in a real-world work environment. <br>
                     </p>
                     <h2 class="fs-4">2. TVET College Engineering Graduates (N2/N3):</h2>
                     <p class="fs-6">
 
-                        training qualification (N2/N3), you will join a 1-year skills program focused on a specific
+                        Training qualification (N2/N3), you will join a 1-year skills program focused on a specific
                         green building in your area. The program includes:
 
                         Short Skills Training and Work Readiness: You will receive training in preparation for work,

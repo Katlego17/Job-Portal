@@ -93,23 +93,23 @@
                 <section class="container">
 
                     <div class="row">
-            
+
                         <div class="col-12 col-lg-12 text-center">
-            
-                            <img src="/Assets/img/hia_infographic.webp" alt="" class="img-fluid">
-                          
-            
+
+                            <img src="/assets/img/hia_infographic.webp" alt="" class="img-fluid">
+
+
                         </div>
-            
+
                     </div>
-            
+
                 </section>
 <!-- CTA -->
 
 <section class="container py-3">
 
     <div class="row">
-      
+
 
         <div class="col-12 col-lg-12">
             <p class="fs-6 text-center py-1">
@@ -118,7 +118,7 @@
         </div>
 
         <div class="col-12 col-lg-12 text-center pb-5">
-            
+
             <a href="https://workingforgreen.co.za/home"><button class="btn btn-secondary py-2 px-5">View Vacancies</button></a>
         </div>
 

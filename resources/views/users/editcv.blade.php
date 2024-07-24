@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Update Details</title>
+    <title>Update</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="assets/images/logo/favicon.png">
@@ -93,7 +93,7 @@
                                     <div class="d-flex align-items-center justify-content-between">
                                         <div>
                                             <i class="anticon opacity-04 font-size-16 anticon-project"></i>
-                                            <span class="m-l-10">Update CV</span>
+                                            <span class="m-l-10">Upload Documents</span>
                                         </div>
                                         <i class="anticon font-size-10 anticon-right"></i>
                                     </div>
@@ -173,7 +173,7 @@
                 <!-- Content Wrapper START -->
                 <div class="main-content">
                     <div class="page-header">
-                        <h2 class="header-title">Update Details</h2>
+                        <h2 class="header-title">Update</h2>
 
                     </div>
                     <div class="container">

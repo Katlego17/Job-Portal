@@ -59,7 +59,7 @@
                               Update Details
                             </a>
                             <a class="dropdown-item" href="{{ route('edit.cv') }}">
-                              Update CV
+                                Upload Documents
                             </a>
                             <a class="dropdown-item" href="{{ route('applications') }}">
                               Applications

@@ -355,7 +355,7 @@
                                     <div class="d-flex align-items-center justify-content-between">
                                         <div>
                                             <i class="anticon opacity-04 font-size-16 anticon-project"></i>
-                                            <span class="m-l-10">Update CV</span>
+                                            <span class="m-l-10">Upload Documents</span>
                                         </div>
                                         <i class="anticon font-size-10 anticon-right"></i>
                                     </div>

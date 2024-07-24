@@ -238,24 +238,20 @@
                 </div>
 <!-- CTA -->
 
-<section class="container py-5">
+<section class="container py-3">
 
     <div class="row">
-        <div class="col-12 col-lg-12">
-            <h1 class="fs-1 text-center pt-5
-            " style="color: #084b39;">Join Us</h1>
-        </div>
+      
 
         <div class="col-12 col-lg-12">
-            <p class="fs-6 text-center py-3">Join WOGB today and embark on a journey towards a sustainable future.
-                <br>Together, we
-                can empower young people and build a greener, more sustainable world.
+            <p class="fs-6 text-center py-1">
+                <br>
             </p>
         </div>
 
         <div class="col-12 col-lg-12 text-center pb-5">
-            <a href="/register"><button class="btn btn-success py-2 px-5" style="border-color: #084b39;">Sign Up</button></a>
-            <a href="/about-us"><button class="btn btn-secondary py-2 px-5">Learn More</button></a>
+            
+            <a href="about-us.html"><button class="btn btn-secondary py-2 px-5">View Vacancies</button></a>
         </div>
 
     </div>

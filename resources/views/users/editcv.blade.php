@@ -174,33 +174,65 @@
                 <div class="main-content">
                     <div class="page-header">
                         <h2 class="header-title">Update</h2>
-
                     </div>
-                    <div class="container">
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
 
+                    @if (session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @endif
+
+                    <div class="container">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h5 class="p-b-10">CV</h5>
+                                        <h5 class="p-b-10">Update Documents</h5>
                                         <form action="{{ route('update.cv') }}" method="post" enctype="multipart/form-data">
                                             @csrf
-                                        <div class="custom-file">
-                                            <input type="file"  name="cv" class="custom-file-input" id="customFile">
-                                            <label class="custom-file-label" for="customFile">Choose file</label>
-                                        </div>
 
-                                        <button class="btn btn-primary m-t-30" type="submit" name="submit" role="button">Update</button>
+                                            <!-- CV Upload -->
+                                            <div class="custom-file mb-3">
+                                                <input type="file" name="cv" class="custom-file-input" id="cvFile">
+                                                <label class="custom-file-label" for="cvFile">Choose CV file</label>
+                                            </div>
 
+                                            <!-- Certified ID Upload -->
+                                            <div class="custom-file mb-3">
+                                                <input type="file" name="certified_id" class="custom-file-input" id="certifiedIdFile">
+                                                <label class="custom-file-label" for="certifiedIdFile">Choose Certified ID file</label>
+                                            </div>
+
+                                            <!-- Employment Contract Upload -->
+                                            <div class="custom-file mb-3">
+                                                <input type="file" name="employment_contract" class="custom-file-input" id="employmentContractFile">
+                                                <label class="custom-file-label" for="employmentContractFile">Choose Employment Contract file</label>
+                                            </div>
+
+                                            <!-- Timesheets Upload -->
+                                            <div class="custom-file mb-3">
+                                                <input type="file" name="timesheets[]" class="custom-file-input" id="timesheetsFile" multiple>
+                                                <label class="custom-file-label" for="timesheetsFile">Choose Timesheets files</label>
+                                            </div>
+
+                                            <button class="btn btn-primary" type="submit">Update</button>
                                         </form>
                                     </div>
                                 </div>
-
                             </div>
-
                         </div>
                     </div>
                 </div>
+
                 <!-- Content Wrapper END -->
 
                 <!-- Footer START -->

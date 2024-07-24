@@ -52,7 +52,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 
 
         Route::get('edit-cv', [App\Http\Controllers\Users\UsersController::class, 'editCV'])->name('edit.cv');
-        Route::post('/edit-cv', [App\Http\Controllers\Users\UsersController::class, 'updateCV'])->name('update.cv');
+        Route::post('/edit-cv', [App\Http\Controllers\Users\UsersController::class, 'updateFiles'])->name('update.cv');
     });
 });
 

@@ -9,11 +9,11 @@ use App\Models\Job\Application;
 use App\Models\Job\JobSaved;
 use Auth;
 use File;
-
+use App\Models\Timesheet;
 
 class UsersController extends Controller
 {
-    
+
     public function profile() {
 
         $profile = User::find(Auth::user()->id);
@@ -49,7 +49,7 @@ class UsersController extends Controller
 
     public function updateDetails(Request $request) {
 
-        
+
         Request()->validate([
             "name" => "required|max:40",
             "job_title" => "required|max:40",
@@ -69,7 +69,7 @@ class UsersController extends Controller
             "linkedin" => $request->linkedin,
         ]);
 
-       
+
 
         if($userDetailsUpdate) {
                 return redirect('/users/edit-details/')->with('update', 'User details updated successfully');
@@ -82,34 +82,51 @@ class UsersController extends Controller
 
         return view('users.editcv');
     }
-    
-    public function updateCV(Request $request) {
 
-        $oldCV = User::find(Auth::user()->id);
-
-    
-        if(File::exists(public_path('assets/cvs/' . $oldCV->cv))){
-            File::delete(public_path('assets/cvs/' . $oldCV->cv));
-        }else{
-            //dd('File does not exists.');
-        }
-       
-        $destinationPath = 'assets/cvs/';
-        $mycv = $request->cv->getClientOriginalName();
-        $request->cv->move(public_path($destinationPath), $mycv);
-
-        $oldCV->update([
-           
-            "cv" =>  $mycv
+    public function updateFiles(Request $request)
+    {
+        $request->validate([
+            'cv' => 'nullable|file|mimes:pdf,doc,docx,jpg,jpeg,png|max:2048',
+            'certified_id' => 'nullable|file|mimes:pdf,doc,docx,jpg,jpeg,png|max:2048',
+            'employment_contract' => 'nullable|file|mimes:pdf,doc,docx,jpg,jpeg,png|max:2048',
+            'timesheets.*' => 'nullable|file|mimes:pdf,doc,docx,jpg,jpeg,png|max:2048',
         ]);
 
-        
-       
-        
+        $user = $request->user();
 
-        return redirect('/users/profile')->with('update', 'CV updated Successfully');
+        // Handle CV
+        if ($request->hasFile('cv')) {
+            $cvFile = $request->file('cv');
+            $cvPath = $cvFile->storeAs('uploads/cv', $cvFile->getClientOriginalName());
+            $user->update(['cv' => $cvPath]);
+        }
 
+        // Handle Certified ID
+        if ($request->hasFile('certified_id')) {
+            $certifiedIdFile = $request->file('certified_id');
+            $certifiedIdPath = $certifiedIdFile->storeAs('uploads/certified_ids', $certifiedIdFile->getClientOriginalName());
+            $user->update(['certified_id' => $certifiedIdPath]);
+        }
+
+        // Handle Employment Contract
+        if ($request->hasFile('employment_contract')) {
+            $employmentContractFile = $request->file('employment_contract');
+            $employmentContractPath = $employmentContractFile->storeAs('uploads/employment_contracts', $employmentContractFile->getClientOriginalName());
+            $user->update(['employment_contract' => $employmentContractPath]);
+        }
+
+        // Handle Timesheets
+        if ($request->hasFile('timesheets')) {
+            foreach ($request->file('timesheets') as $timesheet) {
+                $timesheetPath = $timesheet->storeAs('uploads/timesheets', $timesheet->getClientOriginalName());
+                Timesheet::create([
+                    'user_id' => $user->id,
+                    'file_path' => $timesheetPath,
+                ]);
+            }
+        }
+
+        return redirect()->back()->with('success', 'Files updated successfully!');
     }
-    
-    
+
 }

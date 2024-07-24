@@ -41,7 +41,7 @@
                         <a class="nav-link" href="/how-i-apply">How I Apply</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">login</a>
+                        <a class="nav-link" href="{{ route('login') }}">Register/login</a>
                     </li>
                     <!-- <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -104,7 +104,7 @@
 
                 <div class="col-12 col-lg-6">
 
-                    <h1 class="fs-1 fw-semibold" style="color: white;">Our Vison</h1>
+                    <h1 class="fs-1 fw-semibold" style="color: white;">Our Vision</h1>
 
                 </div>
 

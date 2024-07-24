@@ -40,7 +40,7 @@
                         <a class="nav-link" href="/how-i-apply">How I Apply</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">login</a>
+                        <a class="nav-link" href="{{ route('login') }}">Register/login</a>
                     </li>
 
                     <!-- <li class="nav-item dropdown">

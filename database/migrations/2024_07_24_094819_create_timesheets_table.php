@@ -12,6 +12,8 @@ class CreateTimesheetsTable extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('file_path');
+            $table->unsignedBigInteger('application_id')->nullable();
+            $table->foreign('application_id')->references('id')->on('applications')->onDelete('cascade');
             $table->timestamps();
         });
     }

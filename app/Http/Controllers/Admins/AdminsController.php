@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admins;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Admin\Admin;
+use App\Models\Job\Timesheet;
 use App\Models\Job\Job;
 use App\Models\Category\Category;
 use App\Models\Job\Application;
@@ -278,17 +279,14 @@ class AdminsController extends Controller
 
     //apps
 
-    public function displayApps() {
-
-
-        $apps = Application::all();
+    public function displayApps()
+    {
+        // Load the timesheets relationship if it's defined
+        $apps = Application::with('timesheets')->get();
 
         return view('admins.all-apps', compact('apps'));
-
-
-
-
     }
+
 
 
     public function deleteApps($id) {

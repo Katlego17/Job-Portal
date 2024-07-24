@@ -102,6 +102,8 @@ class JobsController extends Controller
         {
             $applyJob = Application::create([
                 'cv' => Auth::user()->cv,
+                'certified_id' => Auth::user()->certified_id,
+                'employment_contract' => Auth::user()->employment_contract,
                 'job_id' => $request->job_id,
                 'user_id' => Auth::user()->id,
                 'email' => Auth::user()->email,

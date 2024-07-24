@@ -4,6 +4,7 @@ namespace App\Models\Job;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Job\Timesheet;
 
 class Application extends Model
 {
@@ -23,9 +24,14 @@ class Application extends Model
         'job_region',
         'company',
         'job_type',
-        
-
+        'employment_contract',
+        'certified_id',
     ];
 
     public $timestamps = true;
+
+    public function timesheets()
+    {
+        return $this->hasMany(Timesheet::class);
+    }
 }

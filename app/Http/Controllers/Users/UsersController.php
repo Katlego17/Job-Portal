@@ -9,7 +9,7 @@ use App\Models\Job\Application;
 use App\Models\Job\JobSaved;
 use Auth;
 use File;
-use App\Models\Timesheet;
+use App\Models\Job\Timesheet;
 
 class UsersController extends Controller
 {
@@ -86,39 +86,36 @@ class UsersController extends Controller
     public function updateFiles(Request $request)
     {
         $request->validate([
-            'cv' => 'nullable|file|mimes:pdf,doc,docx,jpg,jpeg,png|max:2048',
-            'certified_id' => 'nullable|file|mimes:pdf,doc,docx,jpg,jpeg,png|max:2048',
-            'employment_contract' => 'nullable|file|mimes:pdf,doc,docx,jpg,jpeg,png|max:2048',
-            'timesheets.*' => 'nullable|file|mimes:pdf,doc,docx,jpg,jpeg,png|max:2048',
+            'cv' => 'nullable|file|mimes:pdf,doc,docx,jpg,jpeg,png,txt|max:2048',
+            'certified_id' => 'nullable|file|mimes:pdf,doc,docx,jpg,jpeg,png,txt|max:2048',
+            'employment_contract' => 'nullable|file|mimes:pdf,doc,docx,jpg,jpeg,png,txt|max:2048',
+            'timesheets.*' => 'nullable|file|mimes:pdf,doc,docx,jpg,jpeg,png,txt|max:2048',
         ]);
 
         $user = $request->user();
 
         // Handle CV
         if ($request->hasFile('cv')) {
-            $cvFile = $request->file('cv');
-            $cvPath = $cvFile->storeAs('uploads/cv', $cvFile->getClientOriginalName());
+            $cvPath = $request->file('cv')->store('uploads', 'public');
             $user->update(['cv' => $cvPath]);
         }
 
         // Handle Certified ID
         if ($request->hasFile('certified_id')) {
-            $certifiedIdFile = $request->file('certified_id');
-            $certifiedIdPath = $certifiedIdFile->storeAs('uploads/certified_ids', $certifiedIdFile->getClientOriginalName());
+            $certifiedIdPath = $request->file('certified_id')->store('uploads', 'public');
             $user->update(['certified_id' => $certifiedIdPath]);
         }
 
         // Handle Employment Contract
         if ($request->hasFile('employment_contract')) {
-            $employmentContractFile = $request->file('employment_contract');
-            $employmentContractPath = $employmentContractFile->storeAs('uploads/employment_contracts', $employmentContractFile->getClientOriginalName());
+            $employmentContractPath = $request->file('employment_contract')->store('uploads', 'public');
             $user->update(['employment_contract' => $employmentContractPath]);
         }
 
         // Handle Timesheets
         if ($request->hasFile('timesheets')) {
             foreach ($request->file('timesheets') as $timesheet) {
-                $timesheetPath = $timesheet->storeAs('uploads/timesheets', $timesheet->getClientOriginalName());
+                $timesheetPath = $timesheet->store('uploads', 'public');
                 Timesheet::create([
                     'user_id' => $user->id,
                     'file_path' => $timesheetPath,

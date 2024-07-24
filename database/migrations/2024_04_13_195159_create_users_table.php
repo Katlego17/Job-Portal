@@ -26,6 +26,8 @@ class CreateUsersTable extends Migration
             $table->string('twitter')->nullable();
             $table->string('facebook')->nullable();
             $table->string('linkedin')->nullable();
+            $table->string('certified_id')->nullable();
+            $table->string('employment_contract')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

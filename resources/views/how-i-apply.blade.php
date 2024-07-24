@@ -90,152 +90,20 @@
                     </p>
                 </div>
             </div>
+                <section class="container">
 
-            <div class="row gx-5 align-items-center">
-
-
-                <div class="col-12 col-lg-12">
-
-                    <!-- Timeline 6 - Bootstrap Brain Component -->
-                    <section class="bsb-timeline-6 py-1 py-md-5 py-xl-8">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-10 col-md-12 col-xl-10 col-xxl-9">
-
-                                    <ul class="timeline">
-                                        <li class="timeline-item left">
-                                            <div class="timeline-body">
-                                                <div class="timeline-content">
-                                                    <div class="card border-0">
-
-                                                        <div class="card-body border border-light-subtle">
-                                                            <h2 class="card-title mb-3 text-success-emphasis">Step 1</h2>
-                                                            <h6 class="card-subtitle text-dark mb-3">Check Your
-                                                                Eligibility:
-                                                            </h6>
-                                                            <p class="card-text mb-2">Please ensure that you meet the
-                                                                program’s eligibility criteria. WOGB is aimed at Black
-                                                                Youth, including those living with disabilities,
-                                                                graduates, and unemployed youth. We prioritize women and
-                                                                individuals with a National Senior Certificate or a TVET
-                                                                College Engineering qualification (N2/N3).</p>
-                                                            <p class="card-text m-0"><small
-                                                                    class="text-body-secondary"></small></p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="timeline-item right">
-                                            <div class="timeline-body">
-                                                <div class="timeline-content">
-                                                    <div class="card border-0">
-
-                                                        <div class="card-body border border-light-subtle">
-                                                            <h2 class="card-title mb-3 text-success-emphasis">Step 2</h2>
-                                                            <h6 class="card-subtitle text-dark mb-3">Visit
-                                                                SAYouth.mobi:</h6>
-                                                            <p class="card-text mb-2">Go to SAYouth.mobi, the platform
-                                                                through which we source our applicants. Create an
-                                                                account or login if you already have one.</p>
-                                                            <p class="card-text m-0"><small
-                                                                    class="text-body-secondary"></small></p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="timeline-item left">
-                                            <div class="timeline-body">
-                                                <div class="timeline-content">
-                                                    <div class="card border-0">
-
-                                                        <div class="card-body border border-light-subtle">
-                                                            <h2 class="card-title mb-3 text-success-emphasis">Step 3</h2>
-                                                            <h6 class="card-subtitle text-dark mb-3">Complete Your
-                                                                Profile:</h6>
-                                                            <p class="card-text mb-2">Fill out your profile on
-                                                                SAYouth.mobi, providing accurate and up-to-date
-                                                                information about your qualifications, skills, and
-                                                                employment status.</p>
-                                                            <p class="card-text m-0"><small
-                                                                    class="text-body-secondary"></small></p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="timeline-item right">
-                                            <div class="timeline-body">
-                                                <div class="timeline-content">
-                                                    <div class="card border-0">
-
-                                                        <div class="card-body border border-light-subtle">
-                                                            <h2 class="card-title mb-3 text-success-emphasis">Step 4</h2>
-                                                            <h6 class="card-subtitle text-dark mb-3">Search for the
-                                                                WOGB Program:</h6>
-                                                            <p class="card-text mb-2">Look for the Working for Green
-                                                                Building program on SAYouth.mobi. Read through the
-                                                                program details and requirements to ensure it aligns
-                                                                with your goals.</p>
-                                                            <p class="card-text m-0"><small
-                                                                    class="text-body-secondary"></small></p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-
-                                        <li class="timeline-item left">
-                                            <div class="timeline-body">
-                                                <div class="timeline-content">
-                                                    <div class="card border-0">
-
-                                                        <div class="card-body border border-light-subtle">
-                                                            <h2 class="card-title mb-3 text-success-emphasis">Step 5</h2>
-                                                            <h6 class="card-subtitle text-dark mb-3">Apply for the
-                                                                Program:</h6>
-                                                            <p class="card-text mb-2">Follow the application
-                                                                instructions provided on SAYouth.mobi to apply for the
-                                                                WOGB program. Be sure to include all required documents
-                                                                and information.</p>
-                                                            <p class="card-text m-0"><small
-                                                                    class="text-body-secondary"></small></p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-
-                                        <li class="timeline-item right">
-                                            <div class="timeline-body">
-                                                <div class="timeline-content">
-                                                    <div class="card border-0">
-
-                                                        <div class="card-body border border-light-subtle">
-                                                            <h2 class="card-title mb-3 text-success-emphasis">Step 6</h2>
-                                                            <h6 class="card-subtitle text-dark mb-3">Wait for a
-                                                                Response:</h6>
-                                                            <p class="card-text mb-2">After submitting your
-                                                                application, wait for a response from the WOGB team. If
-                                                                you are shortlisted, you will be contacted for further
-                                                                assessment and interviews.</p>
-                                                            <p class="card-text m-0"><small
-                                                                    class="text-body-secondary"></small></p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-
-                                </div>
-                            </div>
+                    <div class="row">
+            
+                        <div class="col-12 col-lg-12 text-center">
+            
+                            <img src="/Assets/img/hia_infographic.webp" alt="" class="tef img-fluid">
+                          
+            
                         </div>
-                    </section>
-
-                    <!-- Timeline End -->
-                </div>
+            
+                    </div>
+            
+                </section>
 <!-- CTA -->
 
 <section class="container py-3">
@@ -251,7 +119,7 @@
 
         <div class="col-12 col-lg-12 text-center pb-5">
             
-            <a href="https://workingforgreen.co.za/home"><button class="btn btn-secondary py-2 px-5">View Vacancies</button></a>
+            <a href="about-us.html"><button class="btn btn-secondary py-2 px-5">View Vacancies</button></a>
         </div>
 
     </div>

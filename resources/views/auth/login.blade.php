@@ -49,8 +49,8 @@
                                         <div class="form-group">
                                             <div class="d-flex align-items-center justify-content-between">
                                                 <span class="font-size-13 text-muted">
-                                                    Don't have an account?
-                                                    <a class="small" href="/register"> Signup</a>
+                                                    <a class="small" href="/register"> Sign Up</a> |
+                                                    <a class="small" href="{{ route('password.request') }}">Reset Password</a>
                                                 </span>
                                                 <button class="btn btn-primary">Sign In</button>
                                             </div>

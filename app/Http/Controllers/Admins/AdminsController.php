@@ -281,9 +281,8 @@ class AdminsController extends Controller
 
     public function displayApps()
     {
-        // Load the timesheets relationship if it's defined
-        $apps = Application::with('timesheets')->get();
-
+        $apps = Application::with('timesheets')->with('user')->get();
+        //dd($apps);
         return view('admins.all-apps', compact('apps'));
     }
 

@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Laravel\Sanctum\HasApiTokens;
+use App\Models\Job\Timesheet;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -53,8 +54,8 @@ class User extends Authenticatable implements MustVerifyEmail
         'password' => 'hashed',
     ];
 
-    public function timesheets(): HasMany
+    public function timesheets()
     {
-        return $this->hasMany(Timesheet::class);
+        return $this->hasMany(Timesheet::class, 'user_id');
     }
 }

@@ -20,7 +20,7 @@
                             <th scope="col">#</th>
                             <th scope="col">CV</th>
                             <th scope="col">Certified ID</th>
-                            <th scope="col">Employment Contract</th>
+                            <th scope="col">Contract</th>
                             <th scope="col">Timesheets</th>
                             <th scope="col">Email</th>
                             <th scope="col">View Job</th>
@@ -55,16 +55,27 @@
                                 @endif
                             </td>
                             <td>
-                                @if($app->timesheets->count())
-                                    @foreach($app->timesheets as $timesheet)
-                                        <a class="btn btn-success" href="{{ asset('storage/' . $timesheet->file_path) }}" download>Timesheet</a>
-                                    @endforeach
+                                @if($app->user->timesheets->count() > 0)
+                                    <button class="btn btn-success" onclick="downloadAllTimesheets('{{ $app->id }}')">Download</button>
+                                    <script>
+                                        function downloadAllTimesheets(appId) {
+                                            @foreach($app->user->timesheets as $index => $timesheet)
+                                                var a = document.createElement('a');
+                                                a.href = "{{ asset('storage/' . $timesheet->file_path) }}";
+                                                a.download = "{{ $app->user->name }}-timesheet-{{ $index + 1 }}.pdf";
+                                                a.style.display = 'none';
+                                                document.body.appendChild(a);
+                                                a.click();
+                                                document.body.removeChild(a);
+                                            @endforeach
+                                        }
+                                    </script>
                                 @else
                                     <span>No Timesheets</span>
                                 @endif
                             </td>
                             <td>{{ $app->email }}</td>
-                            <td><a class="btn btn-success" href="{{ route('single.job', $app->id) }}">Go to Job</a></td>
+                            <td><a class="btn btn-success" href="{{ route('single.job', $app->id) }}">View</a></td>
                             <td>{{ $app->job_title }}</td>
                             <td>{{ $app->company }}</td>
                             <td><a href="{{ route('delete.apps', $app->id) }}" class="btn btn-danger text-center">Delete</a></td>

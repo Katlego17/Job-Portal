@@ -5,6 +5,7 @@ namespace App\Models\Job;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Job\Timesheet;
+use App\Models\User;
 
 class Application extends Model
 {
@@ -30,8 +31,13 @@ class Application extends Model
 
     public $timestamps = true;
 
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
     public function timesheets()
     {
-        return $this->hasMany(Timesheet::class);
+        return $this->hasMany(Timesheet::class, 'user_id');
     }
 }

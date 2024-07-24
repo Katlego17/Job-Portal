@@ -448,26 +448,26 @@
                             <div class="col-12 col-sm-3  p-b-15" style="display: flex;">
                                 <!-- Single select boxes -->
                                 <h6 class="text-light">Select Region</h6>
-                                <select name="job_region" data-live-search="true"  class="form-control">
-                                    <option>Anywhere</option>
-                                    <option value="AP">Gauteng</option>
-                                    <option>Mpumalanga</option>
-                                    <option>Limpopo</option>
-                                    <option>North West</option>
-                                    <option>Kwa-Zulu Natal</option>
-                                    <option>Western Cape</option>
-                                    <option>Eastern Cape</option>
-                                    <option>Northern Cape</option>
+                                <select name="job_region" class="form-control">
+                                    <option value="">Anywhere</option> <!-- Option for no specific region -->
+                                    <option value="Gauteng">Gauteng</option>
+                                    <option value="Mpumalanga">Mpumalanga</option>
+                                    <option value="Free State">Free State</option>
+                                    <option value="Limpopo">Limpopo</option>
+                                    <option value="North West">North West</option>
+                                    <option value="Kwa-Zulu Natal">Kwa-Zulu Natal</option>
+                                    <option value="Western Cape">Western Cape</option>
+                                    <option value="Eastern Cape">Eastern Cape</option>
+                                    <option value="Northern Cape">Northern Cape</option>
                                 </select>
-
                             </div>
                             <div class="col-12 col-sm-3  p-b-15" style="display: flex;">
                                 <!-- Single select boxes -->
                                 <h6 class="text-light">Select Type</h6>
                                 <select name="job_type" class="form-control" data-live-search="true" title="Select Job Type">
-                                    <option>Full Time</option>
-                                    <option>Part Time</option>
-
+                                    <option value="">Any</option> <!-- Option for no specific type -->
+                                    <option value="Full Time">Full Time</option>
+                                    <option value="Part Time">Part Time</option>
                                 </select>
                             </div>
                             <div class="col-12 col-sm-3 p-b-15">
@@ -492,7 +492,7 @@
                                     <a href="{{ route('single.job', $job->id) }}">
                                         <div class="card">
                                             <div class="card-body">
-                                                <h4>{{ $job->job_title }}ttt</h4>
+                                                <h4>{{ $job->job_title }}</h4>
                                                 <h6> {{ $job->job_region }}</h6>
                                                 <p></p>
                                                 <p><strong>{{ $job->company }}</strong></p>

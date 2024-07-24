@@ -122,30 +122,29 @@ class JobsController extends Controller
 
     public function search(Request $request)
     {
-        Request()->validate([
-            "job_title" => "required",
-            "job_region" => "required",
-            "job_type" => "required",
-
+        $request->validate([
+            "job_title" => "nullable|string",
+            "job_region" => "nullable|string",
+            "job_type" => "nullable|string",
         ]);
 
+        $query = Job::query();
 
-        Search::Create([
-            "keyword" => $request->job_title
-        ]);
+        if ($request->filled('job_title')) {
+            $query->where('job_title', 'like', '%' . $request->job_title . '%');
+        }
+        if ($request->filled('job_region'))
+        {
+            $query->where('job_region', $request->job_region);
+        }
+        if ($request->filled('job_type')) {
+            $query->where('job_type', $request->job_type);
+        }
 
-        $job_title = $request->get('job_title');
-        $job_region = $request->get('job_region');
-        $job_type = $request->get('job_type');
-
-        $searches = Job::Where('job_title', 'like', '%' . $job_title . '%')
-         ->orWhere('job_region', $job_region)
-         ->orWhere('job_type',  $job_type)
-         ->get();
+        $searches = $query->get();
 
         return view('jobs.search', compact('searches'));
     }
-
 
     public function about()
     {

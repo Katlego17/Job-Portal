@@ -21,13 +21,14 @@ use Illuminate\Http\Request;
 
 Auth::routes();
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
+Route::get('/about-us', [App\Http\Controllers\HomeController::class, 'about_us']);
+Route::get('/how-i-apply', [App\Http\Controllers\HomeController::class, 'how_i_apply']);
+Route::get('/my-journey', [App\Http\Controllers\HomeController::class, 'my_journey']);
+Route::get('/where-i-work', [App\Http\Controllers\HomeController::class, 'where_i_work']);
 Route::group(['middleware' => ['auth', 'verified']], function () {
 
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-    Route::get('/about-us', [App\Http\Controllers\HomeController::class, 'about_us']);
-    Route::get('/how-i-apply', [App\Http\Controllers\HomeController::class, 'how_i_apply']);
-    Route::get('/my-journey', [App\Http\Controllers\HomeController::class, 'my_journey']);
-    Route::get('/where-i-work', [App\Http\Controllers\HomeController::class, 'where_i_work']);
+
 
     Route::group(['prefix' => 'jobs'], function() {
         Route::get('single/{id}', [App\Http\Controllers\Jobs\JobsController::class, 'single'])->name('single.job');

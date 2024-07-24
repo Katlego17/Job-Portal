@@ -113,7 +113,7 @@
                                                             <h6 class="card-subtitle text-dark mb-3">Check Your
                                                                 Eligibility:
                                                             </h6>
-                                                            <p class="card-text mb-2">PEnsure that you meet the
+                                                            <p class="card-text mb-2">Please ensure that you meet the
                                                                 program’s eligibility criteria. WOGB is aimed at Black
                                                                 Youth, including those living with disabilities,
                                                                 graduates, and unemployed youth. We prioritize women and
@@ -216,7 +216,7 @@
                                                             <h2 class="card-title mb-3 text-success-emphasis">Step 6</h2>
                                                             <h6 class="card-subtitle text-dark mb-3">Wait for a
                                                                 Response:</h6>
-                                                            <p class="card-text mb-2">LAfter submitting your
+                                                            <p class="card-text mb-2">After submitting your
                                                                 application, wait for a response from the WOGB team. If
                                                                 you are shortlisted, you will be contacted for further
                                                                 assessment and interviews.</p>

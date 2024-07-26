@@ -100,7 +100,9 @@
                         program includes: <br><br>
 
                         <strong>Campus-Based Learning:</strong> You will undergo campus-based learning for 2 to 3 months, enhancing your 
-                        theoretical knowledge and understanding of the trade. Employer-Based Learning: You will participate 
+                        theoretical knowledge and understanding of the trade. 
+                        <br>
+                        <strong>Employer-Based Learning:</strong> You will participate 
                         in employer-based learning for 9 months, gaining practical experience in a real-world work environment. <br>
                     </p>
                     <h2 class="fs-4">2. TVET College Engineering Graduates (N2/N3):</h2>

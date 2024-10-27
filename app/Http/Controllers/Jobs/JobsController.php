@@ -27,7 +27,7 @@ class JobsController extends Controller
 
 
         //getting related jobs
-
+        if ($job) {
         $relatedJobs = Job::where('category', $job->category)
          ->where('id', '!=',  $id)
          ->take(5)
@@ -37,7 +37,11 @@ class JobsController extends Controller
          ->where('id', '!=',  $id)
          ->take(5)
          ->count();
-
+        } else {
+            // Handle case when $job is null, e.g. job not found
+            $relatedJobs = collect(); // Return an empty collection or handle accordingly
+            $relatedJobsCount = 0;
+        }
          $categories = DB::table('categories')
          ->join('jobs', 'jobs.category', '=', 'categories.name')
          ->select('categories.name AS name', 'categories.id AS id', DB::raw('COUNT(jobs.category) AS total'))

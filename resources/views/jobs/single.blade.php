@@ -33,6 +33,38 @@
                         <img class="logo-fold" src="assets/images/logo/logo-fold-white.png" alt="Logo">
                     </a>
                 </div>
+                <nav class="navbar navbar-expand-lg bg-white sticky-top">
+                    <div class="container">
+
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                            <ul class="navbar-nav ms-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/about-us">About Us</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/my-journey">My Journey</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/where-i-work">Where I Work</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/how-i-apply">How I Apply</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('login') }}">Register/login</a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
                 <div class="nav-wrap">
                     <ul class="nav-left">
                         <li class="desktop-toggle">
@@ -52,7 +84,7 @@
                         </li>
                     </ul>
                     <ul class="nav-right">
-
+@if(Auth::user())
                         <li class="dropdown dropdown-animated scale-left">
                             <div class="pointer" data-toggle="dropdown">
                                 <div class="avatar avatar-image  m-h-10 m-r-15">
@@ -112,12 +144,12 @@
                                 </form>
                             </div>
                         </li>
-
+@endif
                     </ul>
                 </div>
             </div>
             <!-- Header END -->
-
+            @if(Auth::user())
             <!-- Side Nav START -->
             <div class="side-nav">
                 <div class="side-nav-inner">
@@ -163,7 +195,7 @@
 
                     </ul>
                 </div>
-            </div>
+            </div>@endif
             <!-- Side Nav END -->
 
             <!-- Page Container START -->
@@ -204,9 +236,6 @@
                               <div class="row align-items-center mb-5">
                                 <div class="col-lg-8 mb-4 mb-lg-0">
                                   <div class="d-flex align-items-center">
-                                    <!--<div class="border p-2 d-inline-block mr-3 rounded">
-                                      <img  src="{{ asset('assets/images/'.$job->image.'') }}" alt="Image">
-                                    </div>-->
                                     <div>
                                       <h2>{{ $job->job_title }}</h2>
                                       <div>

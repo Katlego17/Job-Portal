@@ -7,16 +7,28 @@
             <div class="card-body">
 
                 @if (\Session::has('delete'))
-                <div class="alert alert-success">
-                    <p>{!! \Session::get('delete') !!}</p>
-                </div>
+                    <div class="alert alert-success">
+                        <p>{!! \Session::get('delete') !!}</p>
+                    </div>
                 @endif
 
                 <h5 class="card-title mb-4 d-inline" style="padding:10px">Job Applications</h5>
 
-                <table class="table">
+                <!-- Filter Select and Download Button -->
+                <div class="mb-3">
+                    <select id="region-filter" class="form-select" style="width: 200px;">
+                        <option value="">Filter by Region</option>
+                        @foreach ($regions as $region)
+                            <option value="{{ $region }}">{{ $region }}</option>
+                        @endforeach
+                    </select>
+                    <button id="download-selected" class="btn btn-primary ml-2">Download Selected CVs</button>
+                </div>
+
+                <table id="applications-table" class="table">
                     <thead>
                         <tr>
+                            <th><input type="checkbox" id="select-all"></th>
                             <th scope="col">#</th>
                             <th scope="col">CV</th>
                             <th scope="col">Certified ID</th>
@@ -26,12 +38,20 @@
                             <th scope="col">View Job</th>
                             <th scope="col">Job Title</th>
                             <th scope="col">Company</th>
+                            <th scope="col">Region</th>
                             <th scope="col">Delete</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($apps as $app)
                         <tr>
+                            <td>
+                                <input type="checkbox"
+                                       class="select-cv"
+                                       data-cv="{{ asset('storage/' . $app->cv) }}"
+                                       data-username="{{ $app->user->name }}"
+                                       data-jobtitle="{{ $app->job_title }}">
+                            </td>
                             <th scope="row">{{ $loop->iteration }}</th>
                             <td>
                                 @if($app->cv)
@@ -75,9 +95,10 @@
                                 @endif
                             </td>
                             <td>{{ $app->email }}</td>
-                            <td><a class="btn btn-success" href="{{ route('single.job', $app->id) }}">View</a></td>
+                            <td><a class="btn btn-success" href="{{ route('single.job.admin', $app->id) }}">View</a></td>
                             <td>{{ $app->job_title }}</td>
                             <td>{{ $app->company }}</td>
+                            <td>{{ $app->job_region }}</td>
                             <td><a href="{{ route('delete.apps', $app->id) }}" class="btn btn-danger text-center">Delete</a></td>
                         </tr>
                         @endforeach
@@ -89,3 +110,59 @@
     </div>
 </div>
 @endsection
+
+@push('styles')
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+@endpush
+
+@push('scripts')
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+<script>
+    $(document).ready(function() {
+        // Initialize DataTable with sorting and pagination
+        const table = $('#applications-table').DataTable({
+            paging: true,
+            ordering: true,
+            searching: true
+        });
+
+        // Region Filter
+        $('#region-filter').on('change', function() {
+            const region = $(this).val();
+            table.column(10).search(region).draw();  // Assuming region is in column 10
+        });
+
+        // Select All
+        $('#select-all').on('click', function() {
+            $('.select-cv').prop('checked', this.checked);
+        });
+
+        // Download Selected CVs
+        $('#download-selected').on('click', function() {
+            const selectedCvs = [];
+            $('.select-cv:checked').each(function() {
+                const cvUrl = $(this).data('cv');
+                const username = $(this).data('username').replace(/\s+/g, '_'); // Replace spaces with underscores
+                const jobTitle = $(this).data('jobtitle').replace(/\s+/g, '_');
+                selectedCvs.push({ url: cvUrl, filename: `${username}-${jobTitle}.pdf` });
+            });
+
+            if (selectedCvs.length === 0) {
+                alert("Please select at least one CV to download.");
+                return;
+            }
+
+            selectedCvs.forEach((cv, index) => {
+                const a = document.createElement('a');
+                a.href = cv.url;
+                a.download = cv.filename;
+                a.style.display = 'none';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+            });
+        });
+    });
+</script>
+@endpush

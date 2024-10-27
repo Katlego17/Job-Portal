@@ -24,6 +24,8 @@ class CreateApplicationsTable extends Migration
             $table->string('job_region');
             $table->string('company');
             $table->string('job_type');
+            $table->string('certified_id')->nullable();
+            $table->string('employment_contract')->nullable();
             $table->timestamps();
 
             $table->foreign('job_id')->references('id')->on('jobs')->onDelete('cascade');

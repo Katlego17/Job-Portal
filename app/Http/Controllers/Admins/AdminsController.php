@@ -11,6 +11,9 @@ use App\Models\Category\Category;
 use App\Models\Job\Application;
 use Illuminate\Support\Facades\Hash;
 use File;
+use Auth;
+use DB;
+use App\Models\Job\JobSaved;
 
 class AdminsController extends Controller
 {
@@ -180,8 +183,9 @@ class AdminsController extends Controller
     public function allJobs() {
 
         $jobs = Job::all();
+        $regions = Job::select('job_region')->distinct()->pluck('job_region');
 
-        return view('admins.all-jobs', compact('jobs'));
+        return view('admins.all-jobs', compact('jobs','regions'));
 
     }
 
@@ -282,8 +286,9 @@ class AdminsController extends Controller
     public function displayApps()
     {
         $apps = Application::with('timesheets')->with('user')->get();
+        $regions = Application::select('job_region')->distinct()->pluck('job_region');
         //dd($apps);
-        return view('admins.all-apps', compact('apps'));
+        return view('admins.all-apps', compact('apps', 'regions'));
     }
 
 
@@ -301,7 +306,58 @@ class AdminsController extends Controller
         }
 
     }
+    public function single($id) {
 
+        $job = Job::find($id);
+
+
+        //getting related jobs
+        if ($job) {
+        $relatedJobs = Job::where('category', $job->category)
+         ->where('id', '!=',  $id)
+         ->take(5)
+         ->get();
+
+        $relatedJobsCount = Job::where('category', $job->category)
+         ->where('id', '!=',  $id)
+         ->take(5)
+         ->count();
+        } else {
+            // Handle case when $job is null, e.g. job not found
+            $relatedJobs = collect(); // Return an empty collection or handle accordingly
+            $relatedJobsCount = 0;
+        }
+         $categories = DB::table('categories')
+         ->join('jobs', 'jobs.category', '=', 'categories.name')
+         ->select('categories.name AS name', 'categories.id AS id', DB::raw('COUNT(jobs.category) AS total'))
+         ->groupBy('jobs.category')
+         ->get();
+
+        //save job
+        if(auth()->user()) {
+            $savedJob = JobSaved::where('job_id', $id)
+            ->where('user_id', Auth::user()->id)
+            ->count();
+
+
+           //verfining if user applied to job
+
+           $appliedJob = Application::where('user_id', Auth::user()->id)
+            ->where('job_id', $id)
+            ->count();
+     //categories
+
+
+
+            return view('admins.single', compact('job', 'relatedJobs', 'relatedJobsCount', 'savedJob', 'appliedJob', 'categories'));
+        } else {
+            return view('admins.single', compact('job', 'relatedJobs', 'relatedJobsCount', 'categories'));
+
+        }
+
+
+
+    }
 
 
 }

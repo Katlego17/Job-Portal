@@ -25,13 +25,18 @@ Route::get('/about-us', [App\Http\Controllers\HomeController::class, 'about_us']
 Route::get('/how-i-apply', [App\Http\Controllers\HomeController::class, 'how_i_apply']);
 Route::get('/my-journey', [App\Http\Controllers\HomeController::class, 'my_journey']);
 Route::get('/where-i-work', [App\Http\Controllers\HomeController::class, 'where_i_work']);
+Route::get('/guest-jobs', [App\Http\Controllers\HomeController::class, 'jobs']);
+Route::post('/search-jobs', [App\Http\Controllers\HomeController::class, 'search'])->name('search.job.guest');
+Route::group(['prefix' => 'jobs'], function() {
+    Route::get('single/{id}', [App\Http\Controllers\Jobs\JobsController::class, 'single'])->name('single.job');
+
+});
 Route::group(['middleware' => ['auth', 'verified']], function () {
 
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
     Route::group(['prefix' => 'jobs'], function() {
-        Route::get('single/{id}', [App\Http\Controllers\Jobs\JobsController::class, 'single'])->name('single.job');
         Route::post('save', [App\Http\Controllers\Jobs\JobsController::class, 'saveJob'])->name('save.job');
         Route::post('apply', [App\Http\Controllers\Jobs\JobsController::class, 'jobApply'])->name('apply.job');
         Route::any('search', [App\Http\Controllers\Jobs\JobsController::class, 'search'])->name('search.job');
@@ -92,6 +97,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function() {
 
     Route::get('/display-apps', [App\Http\Controllers\Admins\AdminsController::class, 'displayApps'])->name('display.apps');
     Route::get('/delete-apps/{id}', [App\Http\Controllers\Admins\AdminsController::class, 'deleteApps'])->name('delete.apps');
+
+    Route::get('single/{id}', [App\Http\Controllers\Admins\AdminsController::class, 'single'])->name('single.job.admin');
 
 });
 

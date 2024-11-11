@@ -176,16 +176,18 @@
                 <div class="col-12 col-lg-6">
                     <h1 class="fs-2 pb-3" style="color: white;">TRANSFORMATION OUTCOMES</h1>
                     <p class="fw-6" style="color: white;">Through these, the DPWI has identified Transformation outcomes
-                        to be achieved through the development, procurement and implementation of the iREREP. <br><br>
+                        to be achieved through the development, procurement and implementation of the iREREP. <br>
+                        Over a 30-year period, the projected economic participation goals include:<br><br>
 
-                        <strong>Over R250 billion</strong> contribution to South Africa’s GDP. <br><br>
+                        Up to <strong>R1.3 trillion</strong> direct contribution to South Africa’s GDP. <br><br>
 
-                        <strong>3800 new small businesses</strong> will be developed majority being black-owned.
+                        The creation of<strong> 13100 new small businesses</strong>, majority of which will be Black-owned enterprises.
                         <br><br>
 
-                        <strong>10672</strong> green jobs will be created in the first 5 years; <br><br><strong>324
-                            600</strong> green jobs over the 30 year
-                        Programme life.
+                        Skills development opportunities for more than<strong>475 000</strong> people; <br><br>
+                        
+                        An estimated<strong>503 000</strong> jobs created.
+                        
 
                         <strong>Upskilling of 117 000 people</strong> is expected over 30 years.
                     </p>

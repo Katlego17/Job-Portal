@@ -186,10 +186,8 @@
 
                         Skills development opportunities for more than<strong> 475 000</strong> people; <br><br>
                         
-                        An estimated<strong>503 000</strong> jobs created.
-                        
-
-                        <strong>Upskilling of 117 000 people</strong> is expected over 30 years.
+                        An estimated<strong> 503 000</strong> jobs created.
+                
                     </p>
                 </div>
             </div>

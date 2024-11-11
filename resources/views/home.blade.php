@@ -181,10 +181,10 @@
 
                         Up to <strong>R1.3 trillion</strong> direct contribution to South Africa’s GDP. <br><br>
 
-                        The creation of<strong> 13100 new small businesses</strong>, majority of which will be Black-owned enterprises.
+                        The creation of<strong> 13 100 new small businesses</strong>, majority of which will be Black-owned enterprises.
                         <br><br>
 
-                        Skills development opportunities for more than<strong>475 000</strong> people; <br><br>
+                        Skills development opportunities for more than<strong> 475 000</strong> people; <br><br>
                         
                         An estimated<strong>503 000</strong> jobs created.
                         

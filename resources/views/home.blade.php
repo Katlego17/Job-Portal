@@ -176,7 +176,7 @@
                 <div class="col-12 col-lg-6">
                     <h1 class="fs-2 pb-3" style="color: white;">TRANSFORMATION OUTCOMES</h1>
                     <p class="fw-6" style="color: white;">Through these, the DPWI has identified Transformation outcomes
-                        to be achieved through the development, procurement and implementation of the iREREP. <br>
+                        to be achieved through the development, procurement and implementation of the iREREP. <br><br>
                         Over a 30-year period, the projected economic participation goals include:<br><br>
 
                         Up to <strong>R1.3 trillion</strong> direct contribution to South Africa’s GDP. <br><br>

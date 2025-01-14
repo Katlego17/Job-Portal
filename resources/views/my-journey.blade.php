@@ -152,9 +152,9 @@
                 <div class="col-12 col-lg-4 text-center pb-4">
                     <img src="/assets/img/irerep_logo.png" alt="" class="footer-img img-fluid">
                 </div>
-                <div class="col-12 col-lg-4 text-center">
+                <!--<div class="col-12 col-lg-4 text-center">
                     <img src="/assets/img//epwp_ logo.png" alt="" class="footer-img img-fluid">
-                </div>
+                </div>-->
             </div>
         </div>
     </section>
